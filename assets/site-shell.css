@@ -34,6 +34,73 @@ body.menu-open {
   overflow: hidden;
 }
 
+/* Shared motion language. The contact page introduced this soft rise-and-fade;
+   site-shell.js now applies it progressively across every public page. */
+@keyframes subtleFadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gentlePulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(0, 47, 16, 0.22);
+  }
+
+  50% {
+    transform: scale(1.025);
+    box-shadow: 0 6px 20px rgba(0, 200, 80, 0.35);
+  }
+}
+
+@keyframes radarWave {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.95);
+  }
+
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+}
+
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.animate-fade-slide-up {
+  transform-origin: center;
+  animation: subtleFadeSlideUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms) both;
+}
+
+.animate-gentle-pulse {
+  transform-origin: center;
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+.animate-radar-wave {
+  transform-origin: center;
+  animation: radarWave 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.delay-100 { --reveal-delay: 100ms; }
+.delay-150 { --reveal-delay: 150ms; }
+.delay-200 { --reveal-delay: 200ms; }
+.delay-250 { --reveal-delay: 250ms; }
+.delay-300 { --reveal-delay: 300ms; }
+.delay-400 { --reveal-delay: 400ms; }
+
 [data-site-header] {
   display: contents;
 }
@@ -469,5 +536,21 @@ a {
     height: 1px;
     overflow: hidden;
     clip: rect(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .reveal-pending {
+    opacity: 1;
+    transform: none;
   }
 }

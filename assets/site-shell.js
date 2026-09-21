@@ -106,6 +106,120 @@ if (footer) {
   footer.innerHTML = footerMarkup;
 }
 
+const initPageAnimations = () => {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const revealSelector = [
+    ".hero-copy > *",
+    ".hero > .container > h1",
+    ".hero > .container > p",
+    ".page-hero .container > *",
+    ".team-hero .container > *",
+    ".insights-hero-grid > *",
+    ".story-grid > *",
+    ".performance-head > *",
+    ".stats > *",
+    ".vision-mission .container > *",
+    ".values > *",
+    ".faq-wrap > *",
+    ".section-heading",
+    ".service-cards-grid > *",
+    ".method-head > *",
+    ".steps > *",
+    ".about-copy-inner > *",
+    ".about-visual",
+    ".awards-intro",
+    ".award-list > *",
+    ".team-grid > *",
+    ".leadership-head > *",
+    ".partner-grid > *",
+    ".section-head > *",
+    ".people-grid > *",
+    ".cta-card > *",
+    ".closing-inner > *",
+    ".filters",
+    ".featured-card",
+    ".card-grid > *",
+    ".article-layout > *",
+    ".service-detail-back",
+    ".service-detail-layout > *",
+    ".service-detail-error > *",
+    ".site-footer .footer-grid > *",
+    ".site-footer .footer-bottom"
+  ].join(",");
+  const prepared = new WeakSet();
+  let observer;
+
+  const reveal = (element) => {
+    element.classList.remove("reveal-pending");
+    element.classList.add("animate-fade-slide-up");
+    const clearAnimation = (event) => {
+      if (event.target !== element || event.animationName !== "subtleFadeSlideUp") return;
+      element.classList.remove("animate-fade-slide-up");
+      element.style.removeProperty("--reveal-delay");
+      element.removeEventListener("animationend", clearAnimation);
+    };
+    element.addEventListener("animationend", clearAnimation);
+  };
+
+  const prepare = (root = document) => {
+    if (reducedMotion.matches) return;
+
+    const candidates = [
+      ...(root instanceof Element && root.matches(revealSelector) ? [root] : []),
+      ...root.querySelectorAll(revealSelector)
+    ];
+
+    candidates.forEach((element) => {
+      if (prepared.has(element) || element.classList.contains("animate-fade-slide-up")) return;
+
+      prepared.add(element);
+      const siblings = [...element.parentElement.children].filter(sibling => sibling.matches(revealSelector));
+      const index = Math.max(0, siblings.indexOf(element));
+      element.style.setProperty("--reveal-delay", `${Math.min(index * 90, 360)}ms`);
+      element.classList.add("reveal-pending");
+
+      const revealWithoutScroll = document.body.dataset.page === "services"
+        && element.matches(".service-cards-grid > *");
+
+      if (revealWithoutScroll) reveal(element);
+      else if (observer) observer.observe(element);
+      else reveal(element);
+    });
+  };
+
+  if (reducedMotion.matches) return;
+
+  if ("IntersectionObserver" in window) {
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        observer.unobserve(entry.target);
+        reveal(entry.target);
+      });
+    }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
+  }
+
+  prepare();
+
+  const mutationObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node instanceof Element) prepare(node);
+      });
+    });
+  });
+  mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+  reducedMotion.addEventListener("change", (event) => {
+    if (!event.matches) return;
+    observer?.disconnect();
+    document.querySelectorAll(".reveal-pending").forEach((element) => {
+      element.classList.remove("reveal-pending");
+      element.style.removeProperty("--reveal-delay");
+    });
+  });
+};
+
 const initHeaderControls = () => {
   const toggle = document.getElementById("language-toggle");
   const menu = document.getElementById("language-menu");
@@ -179,3 +293,4 @@ const initHeaderControls = () => {
 };
 
 initHeaderControls();
+initPageAnimations();
