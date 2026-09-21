@@ -21,6 +21,65 @@ function slugify(value) { return value.toLowerCase().normalize("NFD").replace(/[
 function isAdminError(error) { return error?.code === "PGRST116" || /permission|row-level|policy/i.test(error?.message || ""); }
 function filePath(file, prefix) { return `${prefix}/${crypto.randomUUID()}-${file.name.toLowerCase().replace(/[^a-z0-9.]+/g, "-")}`; }
 
+const IMAGE_PRESETS = {
+  cover: { maxWidth: 1600, maxHeight: 900, quality: 0.82, label: "Sampul" },
+  avatar: { maxWidth: 800, maxHeight: 800, quality: 0.8, label: "Foto penulis" }
+};
+
+function formatBytes(bytes) {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+function canvasToBlob(canvas, type, quality) {
+  return new Promise((resolve, reject) => {
+    canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error("Browser tidak dapat mengompres gambar ini.")), type, quality);
+  });
+}
+
+async function compressImage(file, preset) {
+  if (!file || !file.size) return { file: null, summary: "" };
+  if (!file.type.startsWith("image/")) throw new Error(`${preset.label} harus berupa gambar PNG, JPG, atau WebP.`);
+  if (file.size > 25 * 1024 * 1024) throw new Error(`${preset.label} terlalu besar. Batas file asli adalah 25 MB.`);
+
+  let bitmap;
+  try {
+    bitmap = await createImageBitmap(file, { imageOrientation: "from-image" });
+  } catch {
+    throw new Error(`${preset.label} tidak dapat dibaca. Gunakan gambar PNG, JPG, atau WebP yang valid.`);
+  }
+
+  const scale = Math.min(1, preset.maxWidth / bitmap.width, preset.maxHeight / bitmap.height);
+  const width = Math.max(1, Math.round(bitmap.width * scale));
+  const height = Math.max(1, Math.round(bitmap.height * scale));
+  const canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = height;
+  const context = canvas.getContext("2d", { alpha: true });
+
+  if (!context) {
+    bitmap.close();
+    throw new Error("Browser tidak mendukung kompresi gambar.");
+  }
+
+  context.imageSmoothingEnabled = true;
+  context.imageSmoothingQuality = "high";
+  context.drawImage(bitmap, 0, 0, width, height);
+  bitmap.close();
+
+  const blob = await canvasToBlob(canvas, "image/webp", preset.quality);
+  if (scale === 1 && blob.size >= file.size) {
+    return { file, summary: `${preset.label}: ${formatBytes(file.size)} (sudah optimal, file asli dipertahankan)` };
+  }
+  const baseName = file.name.replace(/\.[^.]+$/, "") || "image";
+  const compressedFile = new File([blob], `${baseName}.webp`, { type: "image/webp", lastModified: Date.now() });
+  const savedPercent = Math.max(0, Math.round((1 - compressedFile.size / file.size) * 100));
+  const summary = `${preset.label}: ${formatBytes(file.size)} → ${formatBytes(compressedFile.size)} (${width}×${height}, hemat ${savedPercent}%)`;
+
+  return { file: compressedFile, summary };
+}
+
 function updateFormatFields() {
   const fields = postForm.elements;
   const isPdf = fields.format.value === "pdf";
@@ -35,7 +94,7 @@ function resetForm() {
   formTitle.textContent = "Buat konten baru"; document.querySelector("[data-save-button]").textContent = "Simpan konten"; deleteZone.hidden = true; formMessage.textContent = ""; updateFormatFields(); updateScheduleField();
 }
 async function uploadFile(file, prefix) {
-  if (!file) return null;
+  if (!file || !file.size) return null;
   const path = filePath(file, prefix);
   const { error } = await supabase.storage.from("content-assets").upload(path, file, { upsert: false, contentType: file.type });
   if (error) throw error;
@@ -120,11 +179,16 @@ document.querySelector("[data-delete-post]").addEventListener("click", async () 
   if (error) { formMessage.textContent = error.message; return; } resetForm(); await loadPosts();
 });
 postForm.addEventListener("submit", async event => {
-  event.preventDefault(); const saveButton = document.querySelector("[data-save-button]"); saveButton.disabled = true; formMessage.textContent = "Menyimpan…";
+  event.preventDefault(); const saveButton = document.querySelector("[data-save-button]"); saveButton.disabled = true; formMessage.textContent = "Mengoptimalkan gambar…";
   try {
     const form = new FormData(postForm); const existing = posts.find(post => post.id === form.get("post_id"));
-    const coverPath = await uploadFile(form.get("cover_image"), "covers") || existing?.cover_image_path || null;
-    const avatarPath = await uploadFile(form.get("author_avatar"), "avatars") || existing?.author_avatar_path || null;
+    const [coverResult, avatarResult] = await Promise.all([
+      compressImage(form.get("cover_image"), IMAGE_PRESETS.cover),
+      compressImage(form.get("author_avatar"), IMAGE_PRESETS.avatar)
+    ]);
+    formMessage.textContent = "Mengunggah konten…";
+    const coverPath = await uploadFile(coverResult.file, "covers") || existing?.cover_image_path || null;
+    const avatarPath = await uploadFile(avatarResult.file, "avatars") || existing?.author_avatar_path || null;
     const pdfPath = await uploadFile(form.get("pdf_file"), "pdfs") || existing?.pdf_path || null;
     const status = form.get("status");
     const record = { kind:form.get("kind"), format:form.get("format"), title:form.get("title").trim(), excerpt:form.get("excerpt").trim(), body:form.get("format") === "article" ? form.get("body").trim() : null, category:form.get("category").trim(), reading_minutes:Number(form.get("reading_minutes")), author_name:form.get("author_name").trim(), author_role:form.get("author_role").trim(), author_avatar_path:avatarPath, cover_image_path:coverPath, pdf_path:pdfPath, status, is_featured:form.get("is_featured") === "on", scheduled_at:status === "scheduled" ? new Date(form.get("scheduled_at")).toISOString() : null, published_at:status === "published" ? (existing?.published_at || new Date().toISOString()) : null };
@@ -134,7 +198,9 @@ postForm.addEventListener("submit", async event => {
     if (status === "scheduled" && !form.get("scheduled_at")) throw new Error("Pilih tanggal dan waktu tayang.");
     if (existing) { const { error } = await supabase.from("posts").update(record).eq("id", existing.id); if (error) throw error; }
     else { record.slug = `${slugify(record.title)}-${Date.now().toString().slice(-6)}`; const { error } = await supabase.from("posts").insert(record); if (error) throw error; }
-    formMessage.textContent = existing ? "Perubahan konten tersimpan." : "Konten tersimpan."; resetForm(); await loadPosts();
+    const compressionSummary = [coverResult.summary, avatarResult.summary].filter(Boolean).join(" ");
+    const successMessage = `${existing ? "Perubahan konten tersimpan." : "Konten tersimpan."}${compressionSummary ? ` ${compressionSummary}` : ""}`;
+    resetForm(); formMessage.textContent = successMessage; await loadPosts();
   } catch (error) { formMessage.textContent = error.message || "Konten gagal disimpan."; }
   finally { saveButton.disabled = false; }
 });

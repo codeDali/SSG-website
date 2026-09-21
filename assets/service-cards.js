@@ -21,22 +21,22 @@ const serviceCards = [
     description: { id: "Pendampingan dalam proses lelang, pelaksanaan eksekusi, pengosongan dan pengamanan aset, termasuk perlindungan kepentingan hukum kreditur, pemegang hak maupun pemenang lelang. Layanan juga mencakup penanganan keberatan dan sengketa yang timbul sebelum, selama maupun setelah proses lelang dan eksekusi.", en: "Assistance with auctions, enforcement, vacancy proceedings and asset protection, including safeguarding the legal interests of creditors, rights holders and auction winners. Our services also cover objections and disputes arising before, during or after auction and enforcement proceedings." }
   },
   {
-    slug: "pertanahan-properti-real-estate", image: "images/service-property.png",
+    slug: "pertanahan-properti-real-estate", image: "images/service-property.webp",
     title: { id: "Pertanahan, Properti & Real Estate", en: "Land, Property & Real Estate" }, category: { id: "Sengketa Hak Milik & Agraria", en: "Ownership & Agrarian Disputes" }, alt: { id: "Placeholder pertanahan dan properti", en: "Land and property placeholder" },
     description: { id: "Konsultasi dan pendampingan terkait kepemilikan dan penguasaan tanah, pemeriksaan legalitas aset, peralihan dan pembebanan hak, sertifikasi, pengembangan properti serta penyelesaian sengketa pertanahan dan berbagai persoalan hukum yang berkaitan dengan tanah dan properti.", en: "Advice and assistance concerning land ownership and possession, asset legality reviews, transfers and encumbrances, certification, property development, land dispute resolution and other legal issues involving land and property." }
   },
   {
-    slug: "korporasi-komersial", image: "images/service-corporation.png",
+    slug: "korporasi-komersial", image: "images/service-corporation.webp",
     title: { id: "Korporasi & Komersial", en: "Corporate & Commercial" }, category: { id: "Legal Due Diligence & Kontrak", en: "Legal Due Diligence & Contracts" }, alt: { id: "Placeholder korporasi dan komersial", en: "Corporate and commercial placeholder" },
     description: { id: "Pendampingan hukum dalam kegiatan korporasi dan transaksi komersial, termasuk pendirian dan restrukturisasi perusahaan, penyusunan dan penelaahan kontrak, transaksi bisnis, tata kelola perusahaan, legal due diligence, pemberian legal opinion serta mitigasi risiko hukum dalam kegiatan usaha.", en: "Legal assistance for corporate activities and commercial transactions, including company establishment and restructuring, contract drafting and review, business transactions, corporate governance, legal due diligence, legal opinions and legal risk mitigation." }
   },
   {
-    slug: "kepailitan-pkpu-restrukturisasi-utang", image: "images/service-bankruptcy.png",
+    slug: "kepailitan-pkpu-restrukturisasi-utang", image: "images/service-bankruptcy.webp",
     title: { id: "Kepailitan, PKPU & Restrukturisasi Utang", en: "Bankruptcy, Debt Suspension & Restructuring" }, category: { id: "Kepailitan & Restrukturisasi", en: "Bankruptcy & Restructuring" }, alt: { id: "Placeholder kepailitan dan PKPU", en: "Bankruptcy and debt suspension placeholder" },
     description: { id: "Pendampingan kepada kreditur maupun debitur dalam penyelesaian permasalahan utang-piutang, restrukturisasi kewajiban, Penundaan Kewajiban Pembayaran Utang (PKPU), kepailitan, verifikasi dan penagihan piutang serta berbagai tindakan hukum yang diperlukan untuk melindungi kepentingan Klien.", en: "Assistance for creditors and debtors in resolving debt matters, restructuring obligations, suspension of debt payment proceedings (PKPU), bankruptcy, claim verification and collection, and other legal actions required to protect the Client's interests." }
   },
   {
-    slug: "hukum-administrasi-negara-ptun", image: "images/service-administration.png",
+    slug: "hukum-administrasi-negara-ptun", image: "images/service-administration.webp",
     title: { id: "Hukum Administrasi Negara & PTUN", en: "State Administrative Law & Administrative Court" }, category: { id: "Sengketa Administrasi Negara", en: "State Administrative Disputes" }, alt: { id: "Placeholder hukum administrasi negara", en: "State administrative law placeholder" },
     description: { id: "Konsultasi dan pendampingan dalam permasalahan hukum yang berkaitan dengan keputusan dan/atau tindakan badan atau pejabat pemerintahan, perizinan dan administrasi pemerintahan, upaya administratif serta penyelesaian sengketa melalui Pengadilan Tata Usaha Negara.", en: "Advice and assistance on legal issues involving decisions or actions of government bodies and officials, licensing and public administration, administrative remedies, and dispute resolution before the State Administrative Court." }
   },
@@ -56,12 +56,12 @@ const serviceCards = [
     description: { id: "Pendampingan dan representasi dalam proses negosiasi, mediasi, arbitrase, dan penyelesaian sengketa secara non-litigasi dengan mengedepankan komunikasi, kepentingan para pihak dan penyelesaian yang efektif, tanpa mengesampingkan perlindungan terhadap hak dan kepentingan hukum Klien.", en: "Assistance and representation in negotiation, mediation, arbitration and other non-litigation dispute resolution processes, prioritising communication, the parties' interests and effective outcomes while continuing to protect the Client's legal rights and interests." }
   },
   {
-    slug: "hukum-islam-sengketa-waris", image: "images/service-islamic-law.png",
+    slug: "hukum-islam-sengketa-waris", image: "images/service-islamic-law.webp",
     title: { id: "Hukum Islam & Sengketa Waris", en: "Islamic Law & Inheritance Disputes" }, category: { id: "Waris, Hibah & Ahli Waris", en: "Inheritance, Gifts & Heirs" }, alt: { id: "Placeholder hukum islam dan sengketa waris", en: "Islamic law and inheritance disputes placeholder" },
     description: { id: "Pendampingan hukum dalam persoalan waris, hibah, wasiat, pembagian harta, penetapan ahli waris, hingga penyelesaian sengketa waris sesuai prinsip hukum Islam dan ketentuan yang berlaku. Layanan mencakup konsultasi, negosiasi, dan representasi di pengadilan untuk melindungi hak dan kepentingan keluarga serta pihak yang terlibat.", en: "Legal assistance in inheritance matters, gifts, wills, asset distribution, heir determination and the resolution of inheritance disputes under Islamic law and applicable regulations. Our services include consultation, negotiation and representation in court to protect the rights and interests of families and involved parties." }
   },
   {
-    slug: "retainer-penasihat-hukum", image: "images/service-advo.png",
+    slug: "retainer-penasihat-hukum", image: "images/service-advo.webp",
     title: { id: "Retainer & Penasihat Hukum", en: "Retainer & Legal Counsel" }, category: { id: "Pendampingan Hukum Berkelanjutan", en: "Ongoing Legal Assistance" }, alt: { id: "Placeholder retainer dan penasihat hukum", en: "Retainer and legal counsel placeholder" },
     description: { id: "Layanan penasihat hukum secara berkelanjutan bagi perusahaan, pelaku usaha, organisasi maupun individu dalam menghadapi kebutuhan hukum sehari-hari, pengambilan keputusan, penyusunan kebijakan dan transaksi serta pencegahan dan mitigasi risiko hukum.", en: "Ongoing legal advisory services for companies, business operators, organisations and individuals addressing day-to-day legal needs, decision-making, policy and transaction preparation, and the prevention and mitigation of legal risk." }
   },
@@ -72,11 +72,11 @@ const serviceCards = [
   },
   {
     slug: "tindak-pidana-kekerasan-seksual-dan-tindak-pidana-khusus", image: "images/service-special-crime.png",
-    title: { id: "Tindak Pidana Kekerasan Seksual dan Tindak Pidana Khusus", en: "Sexual Violence and Special Crimes" }, category: { id: "Kekerasan Seksual & Kasus Khusus", en: "Sexual Violence & Special Cases" }, alt: { id: "Placeholder kekerasan seksual dan tindak pidana khusus", en: "Sexual violence and special crimes placeholder" },
+    title: { id: "Tindak Pidana Umum dan Tindak Pidana Khusus ", en: "General Crimes and Other Special Crimes" }, category: { id: "Kekerasan Seksual & Kasus Khusus", en: "Sexual Violence & Special Cases" }, alt: { id: "Placeholder kekerasan seksual dan tindak pidana khusus", en: "Sexual violence and special crimes placeholder" },
     description: { id: "Pendampingan hukum dalam perkara kekerasan seksual dan tindak pidana khusus, baik dalam kapasitas sebagai korban, saksi, maupun terdakwa. Layanan mencakup konsultasi awal, penyusunan strategi hukum, penguatan bukti, negosiasi, serta pendampingan selama proses penyelidikan, penyidikan, persidangan, dan upaya hukum yang relevan.", en: "Legal assistance in sexual violence and special crime matters, whether as victims, witnesses or defendants. Our services include initial consultation, legal strategy development, evidence strengthening, negotiation, and support throughout investigation, prosecution, trial and relevant legal remedies." }
   },
   {
-    slug: "penanganan-blokir-roya-balik-nama-perpanjangan-shgb", image: "images/service-land-title.png",
+    slug: "penanganan-blokir-roya-balik-nama-perpanjangan-shgb", image: "images/service-land-title.webp",
     title: { id: "Penanganan Blokir, Roya, Balik Nama & Perpanjangan SHGB", en: "Handling Blockage, Release, Title Transfer & SHGB Extension" }, category: { id: "Hak Tanggungan & Administrasi Tanah", en: "Mortgage & Land Administration" }, alt: { id: "Placeholder blokir, roya, balik nama dan perpanjangan SHGB", en: "Blocking, release, title transfer and SHGB extension placeholder" },
     description: { id: "Pendampingan dalam proses blokir, roya, balik nama sertifikat, perpanjangan SHGB, serta administrasi hak atas tanah dan hak tangungan. Layanan mencakup pemeriksaan dokumen, koordinasi dengan instansi terkait, pengurusan legalitas, serta penyelesaian sengketa atau kendala administratif yang timbul dalam proses administrasi dan peralihan hak.", en: "Assistance with blocking, release of encumbrances, title transfer, SHGB extension and administration of land rights and mortgages. Services include document review, coordination with relevant authorities, legal administration management, and resolution of disputes or administrative issues arising from property transfer and title records." }
   }
