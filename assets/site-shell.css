@@ -34,6 +34,10 @@ body.menu-open {
   overflow: hidden;
 }
 
+[data-site-header] {
+  display: contents;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -231,7 +235,7 @@ a {
 }
 
 .site-footer {
-  padding: 64px 0 30px;
+  padding: 64px 0 max(30px, env(safe-area-inset-bottom));
   background: var(--burgundy-dark);
   color: rgba(255, 255, 255, 0.72);
 }
@@ -343,9 +347,12 @@ a {
   }
 
   .desktop-nav {
-    position: fixed;
+    position: absolute;
     z-index: 98;
-    inset: var(--header-height) 0 0;
+    inset: 100% 0 auto;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    height: calc(100dvh - var(--header-height));
     display: none;
     align-items: stretch;
     flex-direction: column;
@@ -464,4 +471,3 @@ a {
     clip: rect(0 0 0 0);
   }
 }
-

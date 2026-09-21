@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d090b">
   <meta name="description" content="SSG & Partners adalah firma hukum di Jakarta yang memberikan layanan litigasi, restrukturisasi, perbankan, dan hukum.">
   <title>SSG & Partners | Firma Hukum Jakarta</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +30,7 @@
       --shadow: 0 14px 36px rgba(41, 4, 7, .16);
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { min-height: 100%; background: var(--burgundy-dark); scroll-behavior: smooth; }
     body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.6; overflow-x: hidden; }
     body.menu-open { overflow: hidden; }
     img { display: block; max-width: 100%; }
@@ -85,7 +86,7 @@
     .hero-media, .hero-overlay { position: absolute; inset: 0; }
     .hero-media { transform: scale(1.2); transform-origin: center; }
     /* Adjust these percentages to choose which part of home-hero.png stays visible. */
-    .hero-media img { width: 100%; height: 100%; object-fit: scale-down; object-position: 50% 45%; transform: scale(1.11); transform-origin: center; }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; transform: scale(1.11); transform-origin: center; }
     .hero-overlay { background: linear-gradient(to bottom, rgba(20,2,4,.45), rgba(20,2,4,.61) 65%, rgba(20,2,4,.9)); }
     .hero::after { content: ""; position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: 4px; background: linear-gradient(90deg, #a67d30, #dfbe75 50%, var(--burgundy)); }
     .hero-content { position: relative; z-index: 3; padding-bottom: 52px; }
@@ -139,7 +140,7 @@
     .about-visual { position: relative; min-height: 500px; overflow: hidden; }
     .about-visual > img { width: 100%; height: 100%; object-fit: cover; }
     .about-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(41,4,7,.15), rgba(41,4,7,.55)); }
-    .about-quote { position: absolute; z-index: 2; left: 48px; right: 48px; bottom: 38px; top: auto; padding: 20px 28px; border-left: 2px solid var(--gold); background: rgba(30,9,11,.72); backdrop-filter: blur(8px); }
+    .about-quote { position: absolute; z-index: 2; left: 48px; right: 48px; bottom: 38px; top: auto; display: flex; flex-direction: column; justify-content: center; height: 150px; padding: 20px 28px; border-left: 2px solid var(--gold); background: rgba(30,9,11,.72); backdrop-filter: blur(8px); }
     .about-quote blockquote { margin: 0; font-family: var(--serif); font-size: 1.25rem; }
     .about-quote cite { display: block; margin-top: 7px; color: var(--gold-light); font-size: .66rem; font-style: normal; letter-spacing: .12em; }
 
@@ -216,7 +217,7 @@
       .header-inner { width: min(100% - 28px, 1240px); }
       .brand { flex-basis: 176px; }
       .brand img { width: 176px; }
-      .desktop-nav { position: fixed; z-index: 98; inset: var(--header-height) 0 0; display: none; align-items: stretch; justify-content: flex-start; flex-direction: column; gap: 0; padding: 28px 24px 100px; background: var(--white); overflow-y: auto; }
+      .desktop-nav { position: absolute; z-index: 98; inset: 100% 0 auto; width: 100%; height: calc(100vh - var(--header-height)); height: calc(100dvh - var(--header-height)); display: none; align-items: stretch; justify-content: flex-start; flex-direction: column; gap: 0; padding: 28px 24px 100px; background: var(--white); overflow-y: auto; }
       .desktop-nav.open { display: flex; }
       .desktop-nav a { padding: 17px 0; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: 1.45rem; font-weight: 400; letter-spacing: 0; text-transform: none; }
       .desktop-nav a::after { display: none; }
@@ -267,10 +268,10 @@
       .about-copy { min-height: 520px; padding: 64px 24px; }
       .about-copy::before { font-size: 9rem; }
       .about-visual { min-height: 390px; }
-      .about-quote { top: 24px; left: 24px; right: 24px; padding: 18px 20px; }
-      .award-row { grid-template-columns: 95px 1fr; gap: 20px; }
-      .award-year { font-size: 2.5rem; }
-      .award-description { font-size: .75rem; }
+      .about-quote { top: auto; bottom: 24px; left: 24px; right: 24px; height: 138px; padding: 18px 20px; }
+      .award-row { min-height: 0; grid-template-columns: 1fr; align-items: start; gap: 10px; padding: 24px 0; }
+      .award-year { font-size: 2.65rem; }
+      .award-description { max-width: 34rem; font-size: .82rem; line-height: 1.75; }
       .team-heading .text-link { margin-top: 8px; }
       .person-card { grid-template-columns: 1fr; }
       .person-photo { min-height: 360px; }
@@ -305,7 +306,7 @@
 <body data-page="home">
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html"><img src="images/ssg-logo.svg" alt="SSG and Partners Law Firm logo in burgundy and gold with the firm name clearly displayed on a clean white background"></a>
+      <a class="brand" href="index.html"><img src="images/ssg-logo.svg" alt="SSG and Partners Law Firm logo in burgundy and gold, featuring the firm name and legal emblem on a clean white background"></a>
       <nav class="desktop-nav" id="main-navigation" aria-label="Navigasi utama">
         <a href="index.html" aria-current="page" data-i18n data-id="Beranda" data-en="Home">Beranda</a>
         <a href="about.html" data-i18n data-id="Tentang Kami" data-en="About Us">Tentang Kami</a>
@@ -378,14 +379,14 @@
 
     <section class="about" id="about" aria-labelledby="about-title">
       <div class="about-copy"><div class="about-copy-inner"><p class="eyebrow" data-i18n data-id="Tentang SSG" data-en="About SSG">Tentang SSG</p><h2 class="section-title" id="about-title" data-i18n data-id="Hukum untuk Solusi yang Lebih Baik" data-en="Law for Better Solutions">Hukum untuk Solusi yang Lebih Baik</h2><p data-i18n data-id="SSG & Partners Law Firm adalah kantor hukum di Jakarta yang berkomitmen memberikan layanan hukum profesional dengan mengutamakan integritas, etika, dan kepentingan terbaik klien. Kami percaya bahwa hukum harus memberikan kepastian dan manfaat nyata bagi klien dan masyarakat." data-en="SSG & Partners Law Firm is a Jakarta-based firm committed to professional legal services founded on integrity, ethics, and our clients' best interests. We believe the law should provide certainty and tangible value to clients and society.">SSG & Partners Law Firm adalah kantor hukum di Jakarta yang berkomitmen memberikan layanan hukum profesional dengan mengutamakan integritas, etika, dan kepentingan terbaik klien. Kami percaya bahwa hukum harus memberikan kepastian dan manfaat nyata bagi klien dan masyarakat.</p><a class="button" href="about.html"><span data-i18n data-id="Selengkapnya Tentang Kami" data-en="More About Us">Selengkapnya Tentang Kami</span><span aria-hidden="true">→</span></a></div></div>
-      <div class="about-visual"><!-- Replace images/about-sudirman.png with the final Jakarta/Sudirman photo. --><img src="images/banner-picture.png" alt="A wide view of the Sudirman business district in Jakarta, featuring modern office towers, broad roads, and a clean urban skyline in a confident, dynamic city setting" data-alt-id="Pemandangan luas distrik bisnis Sudirman di Jakarta dengan menara kantor modern, jalan yang lebar, dan siluet kota yang bersih dalam suasana kota yang dinamis dan berwibawa" data-alt-en="A wide view of the Sudirman business district in Jakarta, featuring modern office towers, broad roads, and a clean urban skyline in a confident, dynamic city setting" width="1280" height="1000"><div class="about-quote"><blockquote data-i18n data-id="“Kepastian hukum dimulai dari kepercayaan.”" data-en="“Legal certainty begins with trust.”">“Kepastian hukum dimulai dari kepercayaan.”</blockquote><cite data-i18n data-id="— Prinsip Pelayanan SSG Law Firm" data-en="— SSG Law Firm Service Principle">— Prinsip Pelayanan SSG Law Firm</cite></div></div>
+      <div class="about-visual"><!-- Replace images/about-sudirman.png with the final Jakarta/Sudirman photo. --><img src="images/banner-picture.png" alt="A wide view of Jakarta's Sudirman business district, with modern office towers, broad roads, and a clean urban skyline in a confident, business-focused city atmosphere" data-alt-id="Pemandangan luas distrik bisnis Sudirman di Jakarta, dengan menara kantor modern, jalan yang lebar, dan siluet kota yang bersih dalam suasana kota yang tegas dan berorientasi bisnis" data-alt-en="A wide view of Jakarta's Sudirman business district, with modern office towers, broad roads, and a clean urban skyline in a confident, business-focused city atmosphere" width="1280" height="1000"><div class="about-quote"><blockquote data-i18n data-id="“Kepastian hukum dimulai dari kepercayaan.”" data-en="“Legal certainty begins with trust.”">“Kepastian hukum dimulai dari kepercayaan.”</blockquote><cite data-i18n data-id="— Prinsip Pelayanan SSG Law Firm" data-en="— SSG Law Firm Service Principle">— Prinsip Pelayanan SSG Law Firm</cite></div></div>
     </section>
 
     <section class="awards" aria-labelledby="awards-title">
       <div class="container awards-grid">
         <div class="awards-intro" style="padding-right: clamp(1rem, 2vw, 2.5rem);"><p class="eyebrow" data-i18n data-id="Penghargaan" data-en="Recognition">Penghargaan</p><h2 class="section-title" id="awards-title" data-i18n data-id="Pengakuan yang dibangun secara konsisten." data-en="Recognition built through consistency.">Pengakuan yang dibangun secara konsisten.</h2><p class="section-copy" data-i18n data-id="Pencapaian dan Pengakuan Nasional yang Konsisten Sejak Tahun 2023." data-en="The legacy of Sopian Sitepu & Partners has received national recognition since 2023.">Warisan Sopian Sitepu & Partners telah memperoleh pengakuan nasional sejak 2023.</p></div>
         <div class="award-list" style="padding-right: clamp(1rem, 2vw, 2.5rem);">
-          <div class="award-row" style="padding-block: 0.5rem;"><span class="award-year">2026</span><span class="award-description">Law firm on the Spotlight - Top 100 Indonesian Law Firms 2026<br>Top 5 Best Regional Law Firm 2026<br>Elite One <span data-i18n data-id="di 3 bidang praktik" data-en="in three practice areas">di 3 bidang praktik</span><br>Top 50 Largest Fullservice Law firm 2026<br>Elite One Practice Leaders in Health & Pharmaceuticals<br>⁠Elite One Practice Leaders in Criminal Law<br>Elite One Practice Leaders in Labor & Employment</span></div>
+          <div class="award-row"><span class="award-year">2026</span><span class="award-description">Law firm on the Spotlight - Top 100 Indonesian Law Firms 2026<br>Top 5 Best Regional Law Firm 2026<br>Elite One <span data-i18n data-id="di 3 bidang praktik" data-en="in three practice areas">di 3 bidang praktik</span><br>Top 50 Largest Fullservice Law firm 2026<br>Elite One Practice Leaders in Health & Pharmaceuticals<br>⁠Elite One Practice Leaders in Criminal Law<br>Elite One Practice Leaders in Labor & Employment</span></div>
           <div class="award-row"><span class="award-year">2025</span><span class="award-description">⁠Top 50 Largest Full-Service Law Firms 2025<br>⁠Largest Regional Law Firms 2025 Rank 5<br>⁠Elite One Practice Leaders in Bankruptcy, Insolvency, and Restructuring<br>Elite One Practice Leaders in</span></div>
           <div class="award-row"><span class="award-year">2024</span><span class="award-description">Top 100 Indonesia Law Firms 2024 Rank 26<br>⁠Top 50 Largest Full-Service Law Firms 2024 Rank 21<br>⁠Winner Largers Regional Law Firm of The Year Rank 1 2024</span></div>
           <div class="award-row"><span class="award-year">2023</span><span class="award-description">57th place in the Top 100 Indonesia Law Firms 2023<br>⁠The Third place in the Largest Regional Law Firm of the Year 2023<br>⁠Top 50 Largest Full-Service Law Firms 2023.</span></div>
@@ -397,14 +398,14 @@
       <div class="container">
         <div class="section-heading team-heading"><div class="section-heading-copy"><p class="eyebrow" data-i18n data-id="Profesional Kami" data-en="Our Professionals">Profesional Kami</p><h2 class="section-title" id="team-title" data-i18n data-id="Tim yang Berdedikasi untuk Anda" data-en="A Team Dedicated to You">Tim yang Berdedikasi untuk Anda</h2><p class="section-copy" data-i18n data-id="Didukung oleh tim profesional yang berpengalaman dan memiliki komitmen tinggi terhadap kepentingan klien." data-en="Supported by experienced professionals with a strong commitment to every client's interests.">Didukung oleh tim profesional yang berpengalaman dan memiliki komitmen tinggi terhadap kepentingan klien.</p></div><a class="text-link is-disabled" href="#" aria-disabled="true" data-disabled-link data-i18n data-id="Temui Tim Kami" data-en="Meet Our Team">Temui Tim Kami</a></div>
         <div class="team-grid">
-          <article class="person-card"><div class="person-photo"><img src="images/partner-sopian-sitepu.png" alt="Dr. Sopian Sitepu in a professional studio portrait, wearing formal business attire with a composed, confident expression in a polished corporate setting" width="800" height="800"></div><div class="person-copy"><span class="person-role">Managing Partner</span><h3>Dr. Sopian Sitepu, S.H., M.H., M.Kn.</h3></div></article>
-          <article class="person-card"><div class="person-photo"><img src="images/partner-ridho-ginting.png" alt="Ridho I. Ginting in a professional studio portrait, wearing formal business attire with a calm, confident presence in a polished professional environment" width="800" height="800"></div><div class="person-copy"><span class="person-role">Managing Partner</span><h3>Ridho I. Ginting, S.H., C.Med., CCD., CPLA.</h3></div></article>
+          <article class="person-card"><div class="person-photo"><img src="images/sopian.png" alt="Dr. Sopian Sitepu in a studio portrait, wearing a dark suit and tie, standing with a calm and confident expression in a polished corporate setting" width="800" height="800"></div><div class="person-copy"><span class="person-role">Managing Partner</span><h3>Dr. Sopian Sitepu, S.H., M.H., M.Kn.</h3></div></article>
+          <article class="person-card"><div class="person-photo"><img src="images/ridho.png" alt="Ridho I. Ginting in a studio portrait, wearing a dark suit with a tie, standing with a composed and professional expression in a clean corporate studio background" width="800" height="800"></div><div class="person-copy"><span class="person-role">Managing Partner</span><h3>Ridho I. Ginting, S.H., C.Med., CCD., CPLA.</h3></div></article>
         </div>
       </div>
     </section>
 
     <section class="closing" id="contact" aria-labelledby="closing-title">
-      <div class="closing-media" aria-hidden="true"><!-- Replace images/consultation-banner.png with the final consultation/meeting photo. --><img src="images/consultation-banner.png" alt="A small business consultation meeting in a modern office, with several people gathered around a table discussing strategy and legal matters in a calm, professional environment" width="1600" height="500"></div>
+      <div class="closing-media" aria-hidden="true"><!-- Replace images/consultation-banner.png with the final consultation/meeting photo. --><img src="images/consultation-banner.png" alt="A professional legal consultation meeting in a modern office, with several people gathered around a table discussing strategy and legal matters in a calm and focused atmosphere" width="1600" height="500"></div>
       <div class="closing-overlay"></div>
       <div class="container closing-inner"><div class="closing-copy"><p class="eyebrow" data-i18n data-id="Konsultasi Perkara Strategis" data-en="Strategic Legal Consultation">Konsultasi Perkara Strategis</p><h2 class="section-title" id="closing-title" data-i18n data-id="Perkara Anda membutuhkan pendampingan yang tepat, terukur, dan strategis." data-en="Your legal matter deserves precise, measured, and decisive counsel." style="font-family: 'Times New Roman', Times, serif; font-size: clamp(1.8rem, 2.5vw, 2.5rem); line-height: 1.2;">Perkara Anda membutuhkan pendampingan yang tepat, terukur, dan tegas.</h2><p data-i18n data-id="Jadwalkan pertemuan di kantor kami di Gedung Plaza Sentral Jakarta atau hubungi tim siaga hukum kami untuk respons cepat tanggap." data-en="Schedule a meeting at our Plaza Sentral office in Jakarta or contact our legal response team for prompt assistance.">Jadwalkan pertemuan di kantor kami di Gedung Plaza Sentral Jakarta atau hubungi tim siaga hukum kami untuk respons cepat tanggap.</p></div><div class="closing-actions"><a class="button" href="mailto:ssg.partnerslawfirm@gmail.com" data-i18n data-id="Jadwalkan Konsultasi" data-en="Schedule a Consultation">Jadwalkan Konsultasi</a><a class="button whatsapp-button" href="https://wa.me/6285196513840" target="_blank" rel="noopener noreferrer"><img src="images/icon-whatsapp.svg" alt="" width="16" height="16"><span data-i18n data-id="WhatsApp Siaga" data-en="WhatsApp Now">WhatsApp Siaga</span></a></div></div>
     </section>
@@ -413,7 +414,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand"><img src="images/ssg-logo.svg" alt="SSG and Partners Law Firm logo in burgundy and gold with the firm name clearly displayed on a clean white background" width="221" height="60"><p data-i18n data-id="Firma hukum dan konsultan hukum korporasi berbasis di Sudirman Financial District, Jakarta. Terdaftar dan berakreditasi resmi pada organisasi advokat dan kepailitan Indonesia." data-en="A law firm and corporate legal consultancy based in Jakarta's Sudirman Financial District, officially registered and accredited by Indonesia's advocate and insolvency organisations.">Firma hukum dan konsultan hukum berbasis di Sudirman Financial District, Jakarta. Terdaftar dan berakreditasi resmi pada organisasi advokat dan kepailitan Indonesia.</p></div>
+        <div class="footer-brand"><img src="images/ssg-logo.svg" alt="SSG and Partners Law Firm logo in burgundy and gold, featuring the firm name and legal emblem on a clean white background" width="221" height="60"><p data-i18n data-id="Firma hukum dan konsultan hukum korporasi berbasis di Sudirman Financial District, Jakarta. Terdaftar dan berakreditasi resmi pada organisasi advokat dan kepailitan Indonesia." data-en="A law firm and corporate legal consultancy based in Jakarta's Sudirman Financial District, officially registered and accredited by Indonesia's advocate and insolvency organisations.">Firma hukum dan konsultan hukum berbasis di Sudirman Financial District, Jakarta. Terdaftar dan berakreditasi resmi pada organisasi advokat dan kepailitan Indonesia.</p></div>
         <div><h2 class="footer-heading" data-i18n data-id="Kantor Pusat" data-en="Head Office">Kantor Pusat</h2><p class="footer-address">Menara Sudirman Lantai 18<br>Jl. Jend. Sudirman Kav. 60<br>Kebayoran Baru, Jakarta Selatan 12190<br>DKI Jakarta, Indonesia</p><p class="footer-contact"><strong data-i18n data-id="Jam Operasional:" data-en="Office Hours:">Jam Operasional:</strong> <span data-i18n data-id="Senin–Jumat, 09.00–17.00 WIB" data-en="Monday–Friday, 09:00–17:00 WIB">Senin–Jumat, 09.00–17.00 WIB</span><br><strong>Email:</strong> <a href="mailto:ssg.partnerslawfirm@gmail.com">ssg.partnerslawfirm@gmail.com</a><br><strong>WhatsApp:</strong> <a href="https://wa.me/6285196513840" target="_blank" rel="noopener noreferrer">+62 851-9651-3840</a></p></div>
         <div class="footer-nav-column"><h2 class="footer-heading" data-i18n data-id="Navigasi Cepat" data-en="Quick Navigation">Navigasi Cepat</h2><nav class="footer-nav" aria-label="Navigasi footer"><a href="#home" data-i18n data-id="Beranda" data-en="Home">Beranda</a><a href="#about" data-i18n data-id="Tentang SSG" data-en="About SSG">Tentang SSG</a><a href="#services" data-i18n data-id="Keahlian & Layanan" data-en="Expertise & Services">Keahlian & Layanan</a><a href="#team" data-i18n data-id="Tim Advokat" data-en="Legal Team">Tim Advokat</a><a href="insights.html" data-i18n data-id="Publikasi & Wawasan" data-en="Publications & Insights">Publikasi & Wawasan</a><a href="contact.html" data-i18n data-id="Hubungi Kami" data-en="Contact Us">Hubungi Kami</a></nav></div>
       </div>
@@ -459,13 +460,6 @@
     document.addEventListener('click', (event) => { if (!event.target.closest('.language')) closeLanguageMenu(); });
 
     function closeMobileMenu() { mainNavigation.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.setAttribute('aria-label', document.documentElement.lang === 'en' ? 'Open menu' : 'Buka menu'); document.body.classList.remove('menu-open'); }
-    menuToggle.addEventListener('click', () => {
-      const willOpen = !mainNavigation.classList.contains('open');
-      mainNavigation.classList.toggle('open', willOpen);
-      menuToggle.setAttribute('aria-expanded', String(willOpen));
-      menuToggle.setAttribute('aria-label', willOpen ? (document.documentElement.lang === 'en' ? 'Close menu' : 'Tutup menu') : (document.documentElement.lang === 'en' ? 'Open menu' : 'Buka menu'));
-      document.body.classList.toggle('menu-open', willOpen);
-    });
     mainNavigation.querySelectorAll('a:not([aria-disabled="true"])').forEach((link) => link.addEventListener('click', closeMobileMenu));
     document.querySelectorAll('[data-disabled-link]').forEach((link) => link.addEventListener('click', (event) => event.preventDefault()));
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { if (!languageMenu.hidden) closeLanguageMenu(true); closeMobileMenu(); } });

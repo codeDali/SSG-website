@@ -110,24 +110,59 @@ const initHeaderControls = () => {
   const toggle = document.getElementById("language-toggle");
   const menu = document.getElementById("language-menu");
   const mobile = document.getElementById("menu-toggle");
+  const languageCode = document.getElementById("language-code");
+  const languageOptions = [...document.querySelectorAll("[data-language]")];
 
   if (!toggle || !menu || !mobile) {
     return;
   }
 
-  toggle.addEventListener("click", () => {
+  const closeLanguageMenu = () => {
+    menu.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+  };
+
+  const setLanguage = (language) => {
+    const selected = language === "en" ? "en" : "id";
+    document.documentElement.lang = selected;
+
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      if (element.dataset[selected] !== undefined) {
+        element.textContent = element.dataset[selected];
+      }
+    });
+    document.querySelectorAll("[data-alt-id]").forEach((image) => {
+      image.alt = selected === "en" ? image.dataset.altEn : image.dataset.altId;
+    });
+    languageOptions.forEach((option) => {
+      option.setAttribute("aria-checked", String(option.dataset.language === selected));
+    });
+    if (languageCode) languageCode.textContent = selected.toUpperCase();
+    localStorage.setItem("ssg-language", selected);
+    closeLanguageMenu();
+  };
+
+  toggle.addEventListener("click", (event) => {
+    event.stopImmediatePropagation();
     menu.hidden = !menu.hidden;
     toggle.setAttribute("aria-expanded", String(!menu.hidden));
+  }, { capture: true });
+
+  languageOptions.forEach((option) => {
+    option.addEventListener("click", (event) => {
+      event.stopImmediatePropagation();
+      setLanguage(option.dataset.language);
+    }, { capture: true });
   });
 
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".language")) {
-      menu.hidden = true;
-      toggle.setAttribute("aria-expanded", "false");
+      closeLanguageMenu();
     }
   });
 
-  mobile.addEventListener("click", () => {
+  mobile.addEventListener("click", (event) => {
+    event.stopImmediatePropagation();
     const mainNav = document.getElementById("main-navigation");
 
     if (!mainNav) {
@@ -138,7 +173,9 @@ const initHeaderControls = () => {
     mainNav.classList.toggle("open", isOpen);
     mobile.setAttribute("aria-expanded", String(isOpen));
     document.body.classList.toggle("menu-open", isOpen);
-  });
+  }, { capture: true });
+
+  setLanguage(localStorage.getItem("ssg-language") || "id");
 };
 
 initHeaderControls();

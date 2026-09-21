@@ -64,8 +64,22 @@ const serviceCards = [
     slug: "retainer-penasihat-hukum", image: "images/service-advo.png",
     title: { id: "Retainer & Penasihat Hukum", en: "Retainer & Legal Counsel" }, category: { id: "Pendampingan Hukum Berkelanjutan", en: "Ongoing Legal Assistance" }, alt: { id: "Placeholder retainer dan penasihat hukum", en: "Retainer and legal counsel placeholder" },
     description: { id: "Layanan penasihat hukum secara berkelanjutan bagi perusahaan, pelaku usaha, organisasi maupun individu dalam menghadapi kebutuhan hukum sehari-hari, pengambilan keputusan, penyusunan kebijakan dan transaksi serta pencegahan dan mitigasi risiko hukum.", en: "Ongoing legal advisory services for companies, business operators, organisations and individuals addressing day-to-day legal needs, decision-making, policy and transaction preparation, and the prevention and mitigation of legal risk." }
+  },
+  {
+    slug: "tindak-pidana-korupsi", image: "images/service-corruption.png",
+    title: { id: "Tindak Pidana Korupsi", en: "Corruption Crimes" }, category: { id: "Korupsi & Penegakan Hukum", en: "Corruption & Law Enforcement" }, alt: { id: "Placeholder tindak pidana korupsi", en: "Corruption crime placeholder" },
+    description: { id: "Pendampingan hukum dalam penanganan perkara tindak pidana korupsi, termasuk pemeriksaan, penyidikan, penuntutan, persidangan, serta perlindungan hak klien dalam setiap tahap proses hukum. Layanan mencakup konsultasi strategis, analisis bukti, pengumpulan data, dan upaya hukum yang diperlukan untuk memitigasi risiko serta menjaga kepentingan klien.", en: "Legal assistance in handling corruption crime cases, including examination, investigation, prosecution, trial, and protection of the client's rights at every stage of the legal process. Services cover strategic consultation, evidence analysis, document collection, and legal remedies required to mitigate risk and safeguard the client's interests." }
+  },
+  {
+    slug: "tindak-pidana-kekerasan-seksual-dan-tindak-pidana-khusus", image: "images/service-special-crime.png",
+    title: { id: "Tindak Pidana Kekerasan Seksual dan Tindak Pidana Khusus", en: "Sexual Violence and Special Crimes" }, category: { id: "Kekerasan Seksual & Kasus Khusus", en: "Sexual Violence & Special Cases" }, alt: { id: "Placeholder kekerasan seksual dan tindak pidana khusus", en: "Sexual violence and special crimes placeholder" },
+    description: { id: "Pendampingan hukum dalam perkara kekerasan seksual dan tindak pidana khusus, baik dalam kapasitas sebagai korban, saksi, maupun terdakwa. Layanan mencakup konsultasi awal, penyusunan strategi hukum, penguatan bukti, negosiasi, serta pendampingan selama proses penyelidikan, penyidikan, persidangan, dan upaya hukum yang relevan.", en: "Legal assistance in sexual violence and special crime matters, whether as victims, witnesses or defendants. Our services include initial consultation, legal strategy development, evidence strengthening, negotiation, and support throughout investigation, prosecution, trial and relevant legal remedies." }
+  },
+  {
+    slug: "penanganan-blokir-roya-balik-nama-perpanjangan-shgb", image: "images/service-land-title.png",
+    title: { id: "Penanganan Blokir, Roya, Balik Nama & Perpanjangan SHGB", en: "Handling Blockage, Release, Title Transfer & SHGB Extension" }, category: { id: "Hak Tanggungan & Administrasi Tanah", en: "Mortgage & Land Administration" }, alt: { id: "Placeholder blokir, roya, balik nama dan perpanjangan SHGB", en: "Blocking, release, title transfer and SHGB extension placeholder" },
+    description: { id: "Pendampingan dalam proses blokir, roya, balik nama sertifikat, perpanjangan SHGB, serta administrasi hak atas tanah dan hak tangungan. Layanan mencakup pemeriksaan dokumen, koordinasi dengan instansi terkait, pengurusan legalitas, serta penyelesaian sengketa atau kendala administratif yang timbul dalam proses administrasi dan peralihan hak.", en: "Assistance with blocking, release of encumbrances, title transfer, SHGB extension and administration of land rights and mortgages. Services include document review, coordination with relevant authorities, legal administration management, and resolution of disputes or administrative issues arising from property transfer and title records." }
   }
-  
 ];
 
 window.SSG_SERVICES = serviceCards;
