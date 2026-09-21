@@ -1,0 +1,240 @@
+.contact-hero {
+  padding: 74px 0 78px;
+  background: linear-gradient(104deg, #f2edf7, #f6f1eb);
+}
+
+.contact-hero-grid {
+  display: grid;
+  grid-template-columns: 1.42fr 0.78fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.contact-kicker {
+  display: inline-block;
+  margin: 0 0 24px;
+  padding: 4px 9px;
+  background: #f7f2f2;
+  color: var(--burgundy);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.contact-kicker::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #08783d;
+}
+
+.contact-title {
+  max-width: 700px;
+  margin: 0;
+  color: var(--burgundy);
+  font: clamp(3rem, 5.5vw, 5rem) / 0.98 var(--serif);
+}
+
+.contact-lead {
+  max-width: 720px;
+  margin: 20px 0 0;
+  color: var(--stone);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.hotline-card {
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 16px 30px rgba(43, 19, 20, 0.15);
+}
+
+.hotline-card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 96px;
+  height: 96px;
+  background: #e5fbeb;
+}
+
+.hotline-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hotline-eyebrow {
+  margin: 0;
+  color: #866318;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hotline-card h2 {
+  margin: 9px 0;
+  color: #2a2422;
+  font: 1.65rem var(--serif);
+}
+
+.hotline-card p {
+  margin: 0;
+  color: var(--stone);
+  font-size: 0.82rem;
+}
+
+.hotline-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 55px;
+  margin-top: 16px;
+  padding: 10px 16px;
+  background: #075b2c;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contact-section {
+  padding: 42px 0 82px;
+}
+
+.office-card {
+  padding: 26px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(43, 19, 20, 0.1);
+}
+
+.office-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px;
+  color: var(--burgundy);
+  font: 1.55rem var(--serif);
+}
+
+.office-icon {
+  width: 41px;
+  height: 41px;
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  background: var(--burgundy);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 1.05rem;
+}
+
+.office-title small {
+  display: block;
+  margin-top: 2px;
+  color: #82651c;
+  font: 700 0.65rem var(--sans);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.office-details {
+  display: grid;
+  gap: 17px;
+  max-width: 580px;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.office-details li {
+  position: relative;
+  padding-left: 28px;
+  color: #24211f;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.office-details li:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #8b691b;
+  font-size: 1rem;
+}
+
+.office-details li:nth-child(1):before {
+  content: "⌖";
+}
+
+.office-details li:nth-child(2):before {
+  content: "◷";
+}
+
+.office-details li:nth-child(3):before {
+  content: "☎";
+}
+
+.office-details strong {
+  display: block;
+}
+
+.map-frame {
+  overflow: hidden;
+  border-radius: 4px;
+  background: #edf0ed;
+}
+
+.map-frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 4.6;
+  object-fit: cover;
+}
+
+@media (max-width: 820px) {
+  .contact-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .hotline-card {
+    max-width: 480px;
+  }
+
+  .map-frame img {
+    aspect-ratio: 16 / 7;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-hero {
+    padding: 50px 0;
+  }
+
+  .contact-section {
+    padding: 28px 0 64px;
+  }
+
+  .hotline-card,
+  .office-card {
+    padding: 20px;
+  }
+
+  .map-frame img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .contact-lead {
+    font-size: 0.9rem;
+  }
+}
+

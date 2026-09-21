@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/admin.css">
+  <style>.link-button{display:block;margin:16px 0 0;padding:0;border:0;background:transparent;color:#74131a;font:700 .76rem "Plus Jakarta Sans",Arial,sans-serif;text-decoration:underline;cursor:pointer}.password-panel{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0 0 28px;padding:20px 24px;border:1px solid #e6dfdc;border-left:4px solid #74131a;background:#fff}.password-panel h2{margin:0;font:1.35rem "Times New Roman",serif;color:#74131a}.password-panel p{max-width:500px;margin:4px 0 0;color:#776f6c;font-size:.75rem}.password-form{display:grid;grid-template-columns:190px 190px auto;gap:8px;align-items:center}.password-form input{min-width:0;padding:10px;border:1px solid #cbc3c1;border-radius:3px;font:inherit;font-size:.75rem}.password-form span{grid-column:1/-1;color:#776f6c;font-size:.7rem}@media(max-width:880px){.password-panel{align-items:flex-start;flex-direction:column}.password-form{width:100%;grid-template-columns:1fr 1fr auto}}@media(max-width:560px){.password-form{grid-template-columns:1fr}.password-form span{grid-column:auto}}</style>
+  <title>Admin Konten | SSG & Partners</title>
+</head>
+<body>
+  <header class="admin-header">
+    <a class="admin-brand" href="home.html"><img src="images/ssg-logo.svg" alt="SSG & Partners"><span>Content Admin</span></a>
+    <a href="home.html">Lihat website ↗</a>
+  </header>
+  <main class="admin-wrap">
+    <section class="login-view" data-login-view>
+      <p class="eyebrow">SSG & Partners</p>
+      <h1 class="admin-title">Ruang kelola publikasi.</h1>
+      <div class="login-card">
+        <h2>Masuk admin</h2>
+        <p>Masuk cepat dengan email dan password. Untuk login pertama atau saat lupa password, gunakan magic link.</p>
+        <form data-login-form>
+          <div class="field"><label for="login-email">Email</label><input id="login-email" name="email" type="email" autocomplete="email" required placeholder="nama@perusahaan.com"></div>
+          <div class="field"><label for="login-password">Password</label><input id="login-password" name="password" type="password" autocomplete="current-password" required minlength="6"></div>
+          <button class="button" type="submit">Masuk</button>
+          <button class="link-button" type="button" data-send-magic>Login pertama / lupa password? Kirim magic link</button>
+        </form>
+        <div class="notice" data-login-notice role="status"></div>
+      </div>
+    </section>
+
+    <section class="admin-app" data-admin-app hidden>
+      <p class="eyebrow">Content Management</p>
+      <h1 class="admin-title">Wawasan & Publikasi</h1>
+      <div class="admin-toolbar"><p class="admin-user" data-admin-user></p><button class="button button-secondary button-small" type="button" data-sign-out>Keluar</button></div>
+      <section class="password-panel"><div><h2>Atur password</h2><p>Setelah login pertama dengan magic link, buat password di sini. Berikutnya cukup masuk pakai email dan password.</p></div><form class="password-form" data-password-form><input name="new_password" type="password" autocomplete="new-password" minlength="6" required placeholder="Password baru (min. 12 karakter)"><input name="confirm_password" type="password" autocomplete="new-password" minlength="6" required placeholder="Ulangi password"><button class="button button-small" type="submit">Simpan password</button><span data-password-message></span></form></section>
+      <div class="admin-layout">
+        <section class="panel"><h2>Semua konten</h2><div class="posts" data-posts></div></section>
+        <section class="panel">
+          <h2 data-form-title>Buat konten baru</h2>
+          <form data-post-form>
+            <input type="hidden" name="post_id">
+            <div class="form-grid">
+              <div class="field"><label for="kind">Jenis</label><select id="kind" name="kind"><option value="wawasan">Wawasan</option><option value="publikasi">Publikasi</option></select></div>
+              <div class="field"><label for="format">Format</label><select id="format" name="format"><option value="article">Artikel web</option><option value="pdf">PDF unduhan</option></select></div>
+              <div class="field full"><label for="title">Judul</label><input id="title" name="title" required maxlength="180"></div>
+              <div class="field full"><label for="excerpt">Ringkasan</label><textarea id="excerpt" name="excerpt" required maxlength="500"></textarea></div>
+              <div class="field full" data-body-field><label for="body">Isi artikel</label><textarea id="body" name="body" placeholder="Tulis isi artikel di sini. Untuk sekarang, formatnya teks biasa."></textarea></div>
+              <div class="field"><label for="category">Kategori</label><input id="category" name="category" required placeholder="Contoh: Hukum Perbankan"></div>
+              <div class="field"><label for="reading-minutes">Estimasi baca (menit)</label><input id="reading-minutes" name="reading_minutes" type="number" min="1" value="5" required></div>
+              <div class="field"><label for="author-name">Nama penulis</label><input id="author-name" name="author_name" required></div>
+              <div class="field"><label for="author-role">Jabatan penulis</label><input id="author-role" name="author_role" required></div>
+              <div class="field"><label for="author-avatar">Foto penulis</label><input id="author-avatar" name="author_avatar" type="file" accept="image/png,image/jpeg,image/webp"><p class="file-help">Opsional. PNG, JPG, atau WebP.</p></div>
+              <div class="field"><label for="cover-image">Gambar sampul</label><input id="cover-image" name="cover_image" type="file" accept="image/png,image/jpeg,image/webp"><p class="file-help">PNG, JPG, atau WebP. Direkomendasikan rasio 16:9.</p></div>
+              <div class="field" data-pdf-field hidden><label for="pdf-file">File PDF</label><input id="pdf-file" name="pdf_file" type="file" accept="application/pdf"><p class="file-help">Wajib untuk format PDF.</p></div>
+              <div class="field"><label for="status">Status</label><select id="status" name="status"><option value="draft">Draft</option><option value="scheduled">Jadwalkan</option><option value="published">Publikasikan sekarang</option></select></div>
+              <div class="field" data-schedule-field hidden><label for="scheduled-at">Tanggal & waktu tayang</label><input id="scheduled-at" name="scheduled_at" type="datetime-local"></div>
+              <div class="field full"><label><input name="is_featured" type="checkbox"> Jadikan analisis pilihan utama</label></div>
+            </div>
+            <div class="form-actions"><button class="button" type="submit" data-save-button>Simpan konten</button><button class="button button-secondary" type="button" data-reset-form>Batal</button></div>
+            <p class="status-message" data-form-message role="status"></p>
+            <div class="danger-zone" data-delete-zone hidden><button class="button button-danger button-small" type="button" data-delete-post>Hapus konten ini</button></div>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="assets/admin.js"></script>
+</body>
+</html>

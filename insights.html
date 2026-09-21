@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="assets/site-shell.css">
+    <link rel="stylesheet" href="assets/insights.css">
+
+    <style>
+      .featured-card {
+        min-height: 0;
+      }
+
+      .featured-image {
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+        align-self: start;
+      }
+
+      .content-card-link,
+      .featured-card-link {
+        display: block;
+        height: 100%;
+        color: inherit;
+      }
+
+      .featured-card-link {
+        display: grid;
+      }
+
+      .content-card-link:hover h2,
+      .featured-card-link:hover h2 {
+        text-decoration: underline;
+        text-decoration-color: var(--burgundy);
+      }
+
+      @media (max-width: 820px) {
+        .featured-image {
+          min-height: 0;
+        }
+      }
+    </style>
+
+    <title>Wawasan &amp; Publikasi | SSG &amp; Partners</title>
+  </head>
+
+  <body data-page="insights">
+    <div data-site-header></div>
+
+    <main>
+      <section class="insights-hero">
+        <div class="container insights-hero-grid">
+          <div>
+            <h1 class="insights-title">Wawasan Hukum &amp; Publikasi Terkini</h1>
+            <p class="insights-lead"></p>
+          </div>
+
+          <form class="search-box" data-search-form role="search">
+            <input
+              data-search-input
+              type="search"
+              placeholder="Cari yurisprudensi, regulasi, atau kata kunci…"
+              aria-label="Cari publikasi"
+            >
+            <button type="submit">Cari</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="insights-content">
+        <div class="container">
+          <div class="filters" aria-label="Filter konten">
+            <button class="filter-button" type="button" data-kind="all" aria-pressed="true">Semua</button>
+            <button class="filter-button" type="button" data-kind="wawasan" aria-pressed="false">Wawasan</button>
+            <button class="filter-button" type="button" data-kind="publikasi" aria-pressed="false">Publikasi</button>
+          </div>
+
+          <div data-content-area>
+            <p class="empty-state">Memuat publikasi…</p>
+          </div>
+
+          <p class="results-count" data-results-count></p>
+          <nav class="pagination" data-pagination aria-label="Halaman publikasi"></nav>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+
+    <script src="assets/site-shell.js"></script>
+    <script type="module" src="assets/insights.js"></script>
+  </body>
+</html>

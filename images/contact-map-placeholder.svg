@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder peta kantor</title><desc id="desc">Ganti file ini dengan embed atau screenshot peta final.</desc>
+  <rect width="1280" height="720" fill="#edf0ed"/>
+  <path d="M0 170H1280M0 390H1280M230 0V720M690 0V720M1040 0V720" stroke="#d2d8d3" stroke-width="42"/>
+  <path d="M0 260H1280M0 565H1280M460 0V720M860 0V720" stroke="#fafaf7" stroke-width="10"/>
+  <circle cx="690" cy="390" r="46" fill="#7a151b"/><path d="M690 302c-34 0-62 28-62 62 0 45 62 115 62 115s62-70 62-115c0-34-28-62-62-62z" fill="#7a151b"/><circle cx="690" cy="364" r="20" fill="#fff"/>
+  <text x="690" y="555" text-anchor="middle" fill="#5c615d" font-family="Arial,sans-serif" font-size="25" font-weight="700">LOKASI KANTOR SSG &amp; PARTNERS</text>
+</svg>
