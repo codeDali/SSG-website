@@ -1,4 +1,7 @@
 .DS_Store
 .vscode/
 tmp/
-supabase-client.js
+
+# Local project-sensitive files
+assets/supabase-client.js
+PRD.md
