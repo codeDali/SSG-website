@@ -1,4 +1,4 @@
-// Canonical content for the service cards used by home.html and services.html.
+// Canonical content for the service cards used by index.html and services.html.
 const serviceCards = [
   {
     slug: "litigasi-penyelesaian-sengketa", image: "images/service-litigation.png",

@@ -1,7 +1,7 @@
-const pageName = document.body.dataset.page || "home";
+const pageName = document.body.dataset.page || "index";
 
 const pages = {
-  home: "home.html",
+  index: "index.html",
   about: "about.html",
   services: "services.html",
   team: "team.html",
@@ -10,7 +10,7 @@ const pages = {
 };
 
 const labels = {
-  home: "Beranda",
+  index: "Beranda",
   about: "Tentang Kami",
   services: "Keahlian & Layanan",
   team: "Tim Kami",
@@ -34,7 +34,7 @@ const footerNav = buildNav(
 const headerMarkup = `
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="home.html">
+      <a class="brand" href="index.html">
         <img src="images/ssg-logo.svg" alt="SSG and Partners Law Firm logo">
       </a>
       <nav class="desktop-nav" id="main-navigation" aria-label="Navigasi utama">
