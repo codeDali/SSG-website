@@ -157,7 +157,6 @@
 
 .office-details li {
   position: relative;
-  padding-left: 28px;
   color: #24211f;
   font-size: 0.82rem;
   line-height: 1.55;
@@ -171,17 +170,6 @@
   font-size: 1rem;
 }
 
-.office-details li:nth-child(1):before {
-  content: "⌖";
-}
-
-.office-details li:nth-child(2):before {
-  content: "◷";
-}
-
-.office-details li:nth-child(3):before {
-  content: "☎";
-}
 
 .office-details strong {
   display: block;

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Wawasan hukum dan publikasi terkini dari SSG &amp; Partners.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,14 +52,20 @@
     <title>Wawasan &amp; Publikasi | SSG &amp; Partners</title>
   </head>
 
-  <body data-page="insights">
+  <body
+    data-page="insights"
+    data-title-id="Wawasan &amp; Publikasi | SSG &amp; Partners"
+    data-title-en="Insights &amp; Publications | SSG &amp; Partners"
+    data-description-id="Wawasan hukum dan publikasi terkini dari SSG &amp; Partners."
+    data-description-en="Read the latest legal insights and publications from SSG &amp; Partners."
+  >
     <div data-site-header></div>
 
     <main>
       <section class="insights-hero">
         <div class="container insights-hero-grid">
           <div>
-            <h1 class="insights-title">Wawasan Hukum &amp; Publikasi Terkini</h1>
+            <h1 class="insights-title" data-i18n data-id="Wawasan Hukum &amp; Publikasi Terkini" data-en="Latest Legal Insights &amp; Publications">Wawasan Hukum &amp; Publikasi Terkini</h1>
             <p class="insights-lead"></p>
           </div>
 
@@ -67,34 +74,38 @@
               data-search-input
               type="search"
               placeholder="Cari yurisprudensi, regulasi, atau kata kunci…"
+              data-placeholder-id="Cari yurisprudensi, regulasi, atau kata kunci…"
+              data-placeholder-en="Search case law, regulations, or keywords…"
               aria-label="Cari publikasi"
+              data-aria-id="Cari publikasi"
+              data-aria-en="Search publications"
             >
-            <button type="submit">Cari</button>
+            <button type="submit" data-i18n data-id="Cari" data-en="Search">Cari</button>
           </form>
         </div>
       </section>
 
       <section class="insights-content">
         <div class="container">
-          <div class="filters" aria-label="Filter konten">
-            <button class="filter-button" type="button" data-kind="all" aria-pressed="true">Semua</button>
-            <button class="filter-button" type="button" data-kind="wawasan" aria-pressed="false">Wawasan</button>
-            <button class="filter-button" type="button" data-kind="publikasi" aria-pressed="false">Publikasi</button>
+          <div class="filters" aria-label="Filter konten" data-aria-id="Filter konten" data-aria-en="Content filters">
+            <button class="filter-button" type="button" data-kind="all" aria-pressed="true" data-i18n data-id="Semua" data-en="All">Semua</button>
+            <button class="filter-button" type="button" data-kind="wawasan" aria-pressed="false" data-i18n data-id="Wawasan" data-en="Insights">Wawasan</button>
+            <button class="filter-button" type="button" data-kind="publikasi" aria-pressed="false" data-i18n data-id="Publikasi" data-en="Publications">Publikasi</button>
           </div>
 
           <div data-content-area>
-            <p class="empty-state">Memuat publikasi…</p>
+            <p class="empty-state" data-i18n data-id="Memuat publikasi…" data-en="Loading publications…">Memuat publikasi…</p>
           </div>
 
           <p class="results-count" data-results-count></p>
-          <nav class="pagination" data-pagination aria-label="Halaman publikasi"></nav>
+          <nav class="pagination" data-pagination aria-label="Halaman publikasi" data-aria-id="Halaman publikasi" data-aria-en="Publication pages"></nav>
         </div>
       </section>
     </main>
 
     <div data-site-footer></div>
 
-    <script src="assets/site-shell.js"></script>
-    <script type="module" src="assets/insights.js"></script>
+    <script src="assets/site-shell.js?v=20260922-en"></script>
+    <script type="module" src="assets/insights.js?v=20260922-en2"></script>
   </body>
 </html>

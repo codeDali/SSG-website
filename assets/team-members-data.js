@@ -57,16 +57,39 @@ export const teamMembers = {
   },
 
   "ridho-i-ginting": {
-    name: "Ridho I. Ginting, S.H., C.Med., CCP., CCD., C.PLA.",
+    name: "Ridho I. Ginting, S.H., C.Med., CCD., CPLA.",
     role: "Managing Partner",
     image: "images/ridho.webp",
-    placeholder: true
+    bio: [
+      "Ridho I. Ginting merupakan advokat dan praktisi hukum yang berpengalaman dalam menangani berbagai perkara litigasi maupun non-litigasi, khususnya di bidang hukum perdata, pidana, pertanahan dan properti, sengketa bisnis dan korporasi, perbankan dan jaminan kebendaan, lelang dan eksekusi, serta penyelesaian sengketa melalui negosiasi dan mediasi.",
+      "Dalam praktiknya, Ridho terlibat dalam berbagai penanganan perkara yang kompleks, mulai dari penyusunan strategi hukum, pendampingan dan representasi klien dalam proses peradilan, penyelesaian sengketa pertanahan dan aset, pelaksanaan serta perlawanan terhadap eksekusi, hingga pemberian legal opinion dan analisis hukum bagi individu maupun korporasi. Dalam setiap penanganan perkara, ia mengedepankan pendekatan yang strategis, komprehensif, dan berorientasi pada penyelesaian permasalahan serta perlindungan kepentingan hukum klien.",
+      "Ridho menyelesaikan pendidikan Sarjana Hukum pada Fakultas Hukum Universitas Lampung pada tahun 2018 dan mengikuti Pendidikan Khusus Profesi Advokat (PKPA) melalui Continuing Legal Education (CLE), Fakultas Hukum Universitas Indonesia pada tahun yang sama. Untuk memperkuat kompetensi profesionalnya, ia juga memiliki sertifikasi di bidang mediasi, penyusunan kontrak, dan audit hukum, antara lain Certified Mediator (C.Med.), Certified Contract Drafter (CCD.), dan Certified Professional Legal Auditor (CPLA.).",
+      "Dengan pengalaman praktik dan kompetensi profesional tersebut, Ridho senantiasa mengedepankan integritas, profesionalitas, ketelitian, dan pemahaman yang menyeluruh terhadap setiap permasalahan hukum. Ia meyakini bahwa penanganan perkara yang efektif tidak hanya membutuhkan penguasaan terhadap hukum, tetapi juga kemampuan memahami kepentingan klien, mengidentifikasi risiko, dan menentukan strategi hukum yang tepat untuk mencapai penyelesaian yang optimal."
+    ],
+    lead: "Ridho I. Ginting merupakan advokat dan praktisi hukum yang berpengalaman dalam menangani berbagai perkara litigasi maupun non-litigasi, khususnya di bidang hukum perdata, pidana, pertanahan dan properti, sengketa bisnis dan korporasi, perbankan dan jaminan kebendaan, lelang dan eksekusi, serta penyelesaian sengketa melalui negosiasi dan mediasi.",
+    specialties: [
+      "Hukum perdata",
+      "Hukum pidana",
+      "Pertanahan dan properti",
+      "Sengketa bisnis dan korporasi",
+      "Perbankan dan jaminan kebendaan",
+      "Lelang dan eksekusi",
+      "Negosiasi dan mediasi"
+    ],
+    education: ["Fakultas Hukum Universitas Lampung, Sarjana Hukum, 2018"],
+    training: ["Pendidikan Khusus Profesi Advokat (PKPA) melalui Continuing Legal Education (CLE), Fakultas Hukum Universitas Indonesia, 2018"],
+    certifications: [
+      "Certified Mediator (C.Med.)",
+      "Certified Contract Drafter (CCD.)",
+      "Certified Professional Legal Auditor (CPLA.)"
+    ],
+    facts: [["Posisi", "Managing Partner"]]
   },
 
   "kabul-budiono": {
     name: "Kabul Budiono, S.H., M.H.",
     role: "Advokat Senior",
-    image: "images/team-associate-one-placeholder.svg",
+    image: "images/kabul.png",
     bio: [
       "Kabul Budiono merupakan Advokat Senior yang di Kantor Hukum Sopian Sitepu & Partners. Keaktifannya dalam bidang advokasi sejak duduk dibangku kuliah hingga menjadi advokat pada tahun 1995 menjadikan Kabul Budiono sebagai salah satu Advokat yang berpengaruh diberbagai bidang hukum. Kabul Budiono memiliki berbagai spesialisasi hukum seperti hukum perdata, pidana umum dan khusus, hukum pertanahan, hukum tata usaha negara, dan perdata Islam yang berkaitan dengan waris dan ekonomi syariah serta BANI. Selain bidang-bidang hukum diatas, Kabul Budiono juga selalu mengupdate berbagai perkembangan terkait dengan ilmu hukum kesehatan, Kabul Budiono berpengalaman dalam memberi advokasi serta mendampingi dokter dan rumah sakit dalam berbagai permasalahan dan penyuluhan hukum yang berkaitan dengan hukum kesehatan."
     ],
@@ -116,7 +139,7 @@ export const teamMembers = {
   "japriyanto-manalu": {
     name: "Japriyanto Manalu, S.H., M.H.",
     role: "Advokat",
-    image: "images/team-associate-two-placeholder.svg",
+    image: "images/japriyanto.png",
     bio: [
       "Japriyanto Manalu merupakan Advokat yang memiliki segudang pengalaman diberbagai bidang hukum. Keahliannya dalam mengkonstruksikan suatu perkara guna kepentingan Klien, membuatnya dapat melihat suatu perkara secara utuh dan memberikan solusi terbaik terhadap permasalahan yang dihadapi Klien. Japriyanto memilik spesialisasi hukum pidana umum, lingkungan hidup, dan hukum pertanahan. Japriyanto sering terlibat dalam menangani perkara lingkungan hidup dan kehutanan dll. Selain itu, Japriyanto juga aktif dalam menangani perkara-perkara bidang pertanahan dengan dinamikan mafia tanah yang marak terjadi. Berdasarkan pengalaman dan pengetahuannya secara praktik dan teori, dapat memudahkan Klien dalam menghadapi permasalahan hukum yang sedang dialami."
     ],
@@ -132,11 +155,11 @@ export const teamMembers = {
   "prandika-bangun": {
     name: "Prandika Bangun, S.H.",
     role: "Advokat",
-    image: "images/team-associate-one-placeholder.svg",
+    image: "images/prandika.png",
     bio: [
-      "Prandika Bangun merupakan Advokat dengan segudang pengalaman, sejak masih berkuliah Prandika telah aktif dan bergabung pada Kantor Hukum Sopian Sitepu & Partners, sehingga sangat memahami teori-teori hukum yang didapat pada bangku perkuliahan untuk dikembangkan dan diaplikasikan dalam praktik. Prandika Bangun mengkhususkan diri/ memiliki spesialisasi hukum perusahaan, legal drafting, hukum pajak, hukum perdata, hukum pidana, dan juga hukum pertanahan. Pengetahuan dan Pengalamannya diberbagai bidang hukum, dapat memberikan penyelesaian dan solusi terhadap permasalahan yang dihadapi Klien"
+      "Prandika Bangun merupakan Advokat dengan segudang pengalaman, sangat memahami teori-teori hukum yang didapat pada bangku perkuliahan untuk dikembangkan dan diaplikasikan dalam praktik. Prandika Bangun mengkhususkan diri/ memiliki spesialisasi hukum perusahaan, legal drafting, hukum pajak, hukum perdata, hukum pidana, dan juga hukum pertanahan. Pengetahuan dan Pengalamannya diberbagai bidang hukum, dapat memberikan penyelesaian dan solusi terhadap permasalahan yang dihadapi Klien"
     ],
-    lead: "Prandika Bangun merupakan Advokat dengan segudang pengalaman, sejak masih berkuliah Prandika telah aktif dan bergabung pada Kantor Hukum Sopian Sitepu & Partners, sehingga sangat memahami teori-teori hukum yang didapat pada bangku perkuliahan untuk dikembangkan dan diaplikasikan dalam praktik.",
+    lead: "Prandika Bangun merupakan Advokat dengan segudang pengalaman, sangat memahami teori-teori hukum yang didapat pada bangku perkuliahan untuk dikembangkan dan diaplikasikan dalam praktik.",
     specialties: ["Hukum perusahaan", "Legal drafting", "Hukum pajak", "Hukum perdata", "Hukum pidana", "Hukum pertanahan"],
     education: ["Universitas Bandar Lampung, Sarjana Hukum (S.H.), 2017"],
     associations: ["Perhimpunan Advokat Indonesia (PERADI)"],
@@ -169,7 +192,7 @@ export const teamMembers = {
   "firdaus-pardede": {
     name: "Firdaus Pardede, S.H.",
     role: "Advokat",
-    image: "images/team-associate-one-placeholder.svg",
+    image: "images/firdaus.png",
     bio: [
       "Firdaus Pardede merupakan Advokat yang memiliki keahlian dalam bidang hukum perdata, hukum pidana dan terkait dengan legal drafting. Firdaus Pardede terlibat aktif dalam merancang dan mereview berbagai perjanjian-perjanjian yang dibutuhkan Klien, keahliannya dalam melihat celah-celah klausul dalam perjanjian dapat memberikan kepastian hukum kepada Klien terhadap perjanjian yang hendak disepakati. Firdaus Pardede juga aktif dalam menangani perkara-perkara seperti wanprestasi, perbuatan melawan hukum, perkara pidana umum maupun khusus."
     ],
@@ -239,11 +262,260 @@ export const teamMembers = {
     facts: [["Posisi", "Tenaga Ahli Bidang Hukum Tata Negara"]]
   },
 
+   "fransiscus-xaverius-sumarja": {
+    name: "Prof. Dr. Fransiscus Xaverius Sumarja, S.H., M.Hum.",
+    role: "Tenaga Ahli Bidang Hukum Pertanahan dan Hukum Administrasi Negara",
+    image: "images/franciscus.png",
+    bio: ["Tenaga Ahli Bidang Hukum Pertanahan dan Hukum Administrasi Negara"],
+    lead: "Tenaga Ahli Bidang Hukum Pertanahan dan Hukum Administrasi Negara",
+    facts: [["Posisi", "Tenaga Ahli Bidang Hukum Pertanahan dan Hukum Administrasi Negara"]]
+  },
+
   "aurora-pebry-dhea-surbakti": {
     name: "Aurora Pebry Dhea Surbakti",
     role: "Supporting Team",
     image: "images/team-staff-placeholder.svg",
     placeholder: true
+  }
+};
+
+export const teamMemberEnglish = {
+  "sopian-sitepu": {
+    role: "Managing Partner",
+    bio: [
+      "Sopian Sitepu is an experienced lawyer with extensive knowledge of Indonesian law. For more than 20 years, he has served as both an academic and a legal practitioner, advising on a broad range of cases and legal matters in Indonesia. His areas of practice include corporate matters, disputes between nucleus companies and plasma participants, corruption cases handled by the police, public prosecution service, and Corruption Eradication Commission, arbitration, health law, negotiation and lobbying, and disputes before the State Administrative Court. He has also successfully developed Sopian Sitepu & Partners into one of Indonesia's recognised law firms, earning a number of national awards. In his practice, he consistently upholds professionalism and the principle of equality before the law, while remaining current with legal and regulatory developments to provide clients with effective service and solutions."
+    ],
+    lead: "Sopian Sitepu is an experienced lawyer with extensive knowledge of Indonesian law and more than 20 years of experience as both an academic and a legal practitioner.",
+    specialties: [
+      "Corporate matters",
+      "Disputes between nucleus companies and plasma participants",
+      "Corruption offences",
+      "Arbitration proceedings",
+      "Health law",
+      "Negotiation and lobbying",
+      "State Administrative Court disputes"
+    ],
+    education: [
+      "Universitas Sumatera Utara, Bachelor of Laws (S.H.), 1986",
+      "Universitas Indonesia, Master of Laws (M.H.), 1996",
+      "Universitas Diponegoro, Master of Notarial Law (M.Kn.), 2010",
+      "Universitas Airlangga, Doctorate (Dr), 2020"
+    ],
+    associations: ["Perhimpunan Advokat Indonesia (PERADI)"],
+    training: ["Alternative Dispute Resolution Training (1995 & 2002)"],
+    awards: [
+      "Adviser to the UNILA Legal Aid Study Centre team awarded third place in the 1999 Djoko Soetono Cup, Indonesia-wide Moot Court Competition (UI)",
+      "Adviser to the UNILA Legal Aid Study Centre team awarded first place in the 2003 Djoko Soetono Cup, Indonesia-wide Moot Court Competition (UI)",
+      "57th Place in the Top 100 Indonesian Law Firms 2023",
+      "The Third Place in the Largest Regional Law Firm of the Year 2023",
+      "Top 50 Largest Full Service Law Firms 2023",
+      "1st Largest Regional Law Firm 2024",
+      "Elite One Practice Leaders in Bankruptcy, Insolvency, and Restructuring 2025",
+      "Elite One Practice Leaders in Health & Pharmaceuticals 2025",
+      "Top 50 Largest Full Service Law Firms 2025",
+      "5th Largest Regional Law Firms 2025"
+    ],
+    organizations: [
+      "Head of Legal Aid, UNILA Consultation and Legal Aid Division (2000–2006)",
+      "Supervisor, Technical Service Unit of the Legal Aid Study Centre (1997–Present)",
+      "Head of Law and Advocacy, Lampung Provincial KONI (2023–Present)",
+      "Chair, Indonesian Hockey Federation, Lampung Province (2018–Present)"
+    ],
+    otherExperience: [
+      "Lecturer, Faculty of Law, Universitas Lampung (1988–2007)",
+      "Lecturer, Faculty of Law, Universitas Bandar Lampung (1990–1994)",
+      "Lecturer, Faculty of Law, Universitas Tulang Bawang (2023–2024)",
+      "Director, LBH RI (1991–1993)",
+      "Director, LBH-Nasional (1996–Present)"
+    ],
+    facts: [
+      ["Position", "Managing Partner"],
+      ["Experience", "More than 20 years"],
+      ["Association", "PERADI"]
+    ]
+  },
+
+  "ridho-i-ginting": {
+    role: "Managing Partner",
+    bio: [
+      "Ridho I. Ginting is an advocate and legal practitioner experienced in handling litigation and non-litigation matters, particularly in civil law, criminal law, land and property law, business and corporate disputes, banking and security interests, auctions and enforcement, and dispute resolution through negotiation and mediation.",
+      "In his practice, Ridho has been involved in a range of complex matters, from developing legal strategies and representing clients in court proceedings to resolving land and asset disputes, conducting and challenging enforcement proceedings, and providing legal opinions and analysis to individuals and corporations. In every engagement, he adopts a strategic, comprehensive, and solution-oriented approach focused on protecting the client's legal interests.",
+      "Ridho obtained his Bachelor of Laws from the Faculty of Law, Universitas Lampung, in 2018 and completed the Special Professional Education Programme for Advocates (PKPA) through Continuing Legal Education at the Faculty of Law, Universitas Indonesia, in the same year. To strengthen his professional capabilities, he has also obtained certifications in mediation, contract drafting, and legal auditing, including Certified Mediator (C.Med.), Certified Contract Drafter (CCD.), and Certified Professional Legal Auditor (CPLA.).",
+      "Drawing on his practical experience and professional capabilities, Ridho consistently upholds integrity, professionalism, precision, and a thorough understanding of each legal matter. He believes that effective representation requires not only command of the law, but also the ability to understand the client's interests, identify risk, and determine an appropriate legal strategy to achieve the best possible outcome."
+    ],
+    lead: "Ridho I. Ginting is an advocate and legal practitioner experienced in litigation and non-litigation matters, particularly civil and criminal law, land and property, business and corporate disputes, banking and security interests, auctions and enforcement, negotiation, and mediation.",
+    specialties: [
+      "Civil law",
+      "Criminal law",
+      "Land and property",
+      "Business and corporate disputes",
+      "Banking and security interests",
+      "Auctions and enforcement",
+      "Negotiation and mediation"
+    ],
+    education: ["Faculty of Law, Universitas Lampung, Bachelor of Laws, 2018"],
+    training: ["Special Professional Education Programme for Advocates (PKPA), Continuing Legal Education (CLE), Faculty of Law, Universitas Indonesia, 2018"],
+    certifications: [
+      "Certified Mediator (C.Med.)",
+      "Certified Contract Drafter (CCD.)",
+      "Certified Professional Legal Auditor (CPLA.)"
+    ],
+    facts: [["Position", "Managing Partner"]]
+  },
+
+  "kabul-budiono": {
+    role: "Senior Advocate",
+    bio: [
+      "Kabul Budiono is a Senior Advocate at Sopian Sitepu & Partners. His involvement in advocacy since university and his admission as an advocate in 1995 have established him as an influential practitioner across a range of legal fields. His areas of practice include civil law, general and special criminal law, land law, state administrative law, Islamic civil law concerning inheritance and sharia economics, and BANI arbitration. He also follows developments in health law and has experience advising and representing doctors and hospitals in legal matters and legal education concerning the healthcare sector."
+    ],
+    lead: "Kabul Budiono is a Senior Advocate at Sopian Sitepu & Partners.",
+    specialties: [
+      "Civil law",
+      "General and special criminal law",
+      "Land law",
+      "State administrative law",
+      "Islamic civil law, inheritance, and sharia economics",
+      "BANI arbitration",
+      "Health law"
+    ],
+    education: ["Universitas Lampung, Master of Laws (M.H.)"],
+    facts: [["Position", "Senior Advocate"]]
+  },
+
+  "simon-petrus-ginting": {
+    role: "Advocate & Receiver",
+    bio: [
+      "Simon Petrus Ginting is an advocate and receiver affiliated with PERADI and AKPI. He has also been included in Hukumonline's Hall of Fame, an exclusive list of partners from prominent law firms and graduates of leading Indonesian universities. His practice focuses on bankruptcy, corporate law, corruption offences, Suspension of Debt Payment Obligations (PKPU), land disputes, tax law, criminal law, and civil law. His broad experience as an advocate and receiver gives him a strong understanding of Indonesian legal practice and enables him to provide strategic solutions to clients' legal issues and disputes."
+    ],
+    lead: "Simon Petrus Ginting is an advocate and receiver affiliated with PERADI and AKPI.",
+    specialties: [
+      "Bankruptcy law",
+      "Corporate law",
+      "Corruption offences",
+      "Suspension of Debt Payment Obligations (PKPU)",
+      "Land disputes",
+      "Tax law",
+      "Criminal and civil law"
+    ],
+    education: ["Universitas Lampung, Bachelor of Laws (S.H.), 2010"],
+    associations: [
+      "Perhimpunan Advokat Indonesia (PERADI)",
+      "Asosiasi Kurator dan Pengurus Indonesia (AKPI)"
+    ],
+    awards: ["Hall of Fame: An Exclusive List of Partners from Prominent Law Firms 2024"],
+    facts: [["Position", "Advocate & Receiver"], ["Associations", "PERADI & AKPI"]]
+  },
+
+  "japriyanto-manalu": {
+    role: "Advocate",
+    bio: [
+      "Japriyanto Manalu is an advocate with substantial experience across a range of legal fields. His ability to construct a matter around the client's interests enables him to assess it comprehensively and identify an appropriate solution. His practice focuses on general criminal law, environmental and forestry law, and land law. He is frequently involved in environmental and forestry matters and actively handles land disputes, including matters affected by the prevalence of organised land fraud. His practical experience and legal knowledge assist clients in navigating the legal issues they face."
+    ],
+    lead: "Japriyanto Manalu is an advocate with substantial experience across a range of legal fields.",
+    specialties: ["General criminal law", "Environmental and forestry law", "Land law"],
+    education: [
+      "Universitas Lampung, Bachelor of Laws (S.H.), 2010",
+      "Universitas Lampung, Master of Laws (M.H.), 2024"
+    ],
+    facts: [["Position", "Advocate"]]
+  },
+
+  "prandika-bangun": {
+    role: "Advocate",
+    bio: [
+      "Prandika Bangun is an experienced advocate who applies the legal theories acquired through his academic studies to professional practice. His areas of practice include corporate law, legal drafting, tax law, civil law, criminal law, and land law. His knowledge and experience across these fields enable him to develop solutions to the legal issues faced by clients."
+    ],
+    lead: "Prandika Bangun is an experienced advocate who applies his academic understanding of legal theory to professional practice.",
+    specialties: ["Corporate law", "Legal drafting", "Tax law", "Civil law", "Criminal law", "Land law"],
+    education: ["Universitas Bandar Lampung, Bachelor of Laws (S.H.), 2017"],
+    associations: ["Perhimpunan Advokat Indonesia (PERADI)"],
+    training: ["Applied Tax Brevet A & B Specialised Education and Training, including Dispute Identification, 2024"],
+    facts: [["Position", "Advocate"], ["Association", "PERADI"]]
+  },
+
+  "chaerul-tri-rizki-sembiring": {
+    role: "Advocate",
+    bio: [
+      "Chairul Sembiring is an advocate with broad intellectual and legal knowledge. His areas of practice include legal drafting, civil law, criminal law, employment law, and industrial relations. He is regularly involved in drafting contracts for legal entities and individuals. His precision in interpreting and drafting contractual provisions helps provide legal certainty to clients. He also actively advises clients on employment and industrial relations law."
+    ],
+    lead: "Chairul Sembiring is an advocate with broad intellectual and legal knowledge.",
+    specialties: ["Legal drafting", "Civil law", "Criminal law", "Employment law", "Industrial relations"],
+    education: ["Universitas Diponegoro, Bachelor of Laws (S.H.), 2016"],
+    associations: ["Perhimpunan Advokat Indonesia (PERADI)"],
+    training: ["Contract Education and Training, Faculty of Law, Universitas Diponegoro, 2014"],
+    otherExperience: ["Internship at the Ministry of Foreign Affairs of the Republic of Indonesia, 2015"],
+    facts: [["Position", "Advocate"], ["Association", "PERADI"]]
+  },
+
+  "firdaus-pardede": {
+    role: "Advocate",
+    bio: [
+      "Firdaus Pardede is an advocate with expertise in civil law, criminal law, and legal drafting. He is actively involved in drafting and reviewing agreements required by clients. His ability to identify potential gaps in contractual clauses helps provide clients with legal certainty before agreements are concluded. He also handles matters involving breach of contract, unlawful acts, and general and special criminal offences."
+    ],
+    lead: "Firdaus Pardede is an advocate with expertise in civil law, criminal law, and legal drafting.",
+    specialties: ["Civil law", "Criminal law", "Legal drafting", "Breach of contract", "Unlawful acts"],
+    education: ["Universitas Lampung, Bachelor of Laws (S.H.), 2018"],
+    associations: ["Perhimpunan Advokat Indonesia (PERADI)"],
+    training: ["Continuing Legal Education, Faculty of Law, Universitas Indonesia and Perhimpunan Advokat Indonesia, 2015"],
+    facts: [["Position", "Advocate"], ["Association", "PERADI"]]
+  },
+
+  "rilda-murniati": {
+    role: "Specialist Adviser in Corporate and Economic Law and Commercial Contracts",
+    bio: ["Specialist Adviser in Corporate and Economic Law and Commercial Contracts"],
+    lead: "Specialist Adviser in Corporate and Economic Law and Commercial Contracts",
+    education: [
+      "Universitas Lampung, Bachelor of Laws (S.H.), 1993",
+      "Universitas Gadjah Mada, Master of Humanities (M.Hum.), 1998"
+    ],
+    facts: [["Position", "Specialist Adviser in Corporate and Economic Law and Commercial Contracts"]]
+  },
+
+  "m-fakih": {
+    role: "Specialist Adviser in Health Law",
+    bio: ["Specialist Adviser in Health Law"],
+    lead: "Specialist Adviser in Health Law",
+    education: [
+      "Universitas Lampung, Bachelor of Laws (S.H.), 1988",
+      "Universitas Gadjah Mada, Master of Science (M.S.), 1992",
+      "Universitas Gadjah Mada, Doctorate (Dr.), 2012"
+    ],
+    facts: [["Position", "Specialist Adviser in Health Law"]]
+  },
+
+  "heni-siswanto": {
+    role: "Specialist Adviser in Criminal Law",
+    bio: ["Specialist Adviser in Criminal Law"],
+    lead: "Specialist Adviser in Criminal Law",
+    education: [
+      "Universitas Diponegoro, Bachelor of Laws (S.H.), 1988",
+      "Universitas Lampung, Master of Laws (M.H.), 2003",
+      "Universitas Diponegoro, Doctorate (Dr.), 2014"
+    ],
+    facts: [["Position", "Specialist Adviser in Criminal Law"]]
+  },
+
+  "ade-arif-firmansyah": {
+    role: "Specialist Adviser in Constitutional Law",
+    bio: ["Specialist Adviser in Constitutional Law"],
+    lead: "Specialist Adviser in Constitutional Law",
+    education: [
+      "Universitas Lampung, Bachelor of Laws (S.H.), 2008",
+      "Universitas Lampung, Master of Laws (M.H.), 2012",
+      "Universitas Lampung, Doctorate (Dr.), 2024"
+    ],
+    facts: [["Position", "Specialist Adviser in Constitutional Law"]]
+  },
+
+  "fransiscus-xaverius-sumarja": {
+    role: "Specialist Adviser in Land and State Administrative Law",
+    bio: ["Specialist Adviser in Land and State Administrative Law"],
+    lead: "Specialist Adviser in Land and State Administrative Law",
+    facts: [["Position", "Specialist Adviser in Land and State Administrative Law"]]
+  },
+
+  "aurora-pebry-dhea-surbakti": {
+    role: "Supporting Team"
   }
 };
 

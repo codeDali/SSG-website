@@ -1,5 +1,10 @@
 // Canonical content for the service cards used by index.html and services.html.
 const serviceCards = [
+    {
+    slug: "lelang-eksekusi-pengamanan-aset", image: "images/service-execution.png",
+    title: { id: "Lelang, Eksekusi & Pengamanan Aset", en: "Auctions, Enforcement & Asset Security" }, category: { id: "Eksekusi HT & Parate Eksekusi", en: "Mortgage & Direct Enforcement" }, alt: { id: "Placeholder lelang dan eksekusi", en: "Auction and enforcement placeholder" },
+    description: { id: "Pendampingan dalam proses lelang, pelaksanaan eksekusi, pengosongan dan pengamanan aset, termasuk perlindungan kepentingan hukum kreditur, pemegang hak maupun pemenang lelang. Layanan juga mencakup penanganan keberatan dan sengketa yang timbul sebelum, selama maupun setelah proses lelang dan eksekusi.", en: "Assistance with auctions, enforcement, vacancy proceedings and asset protection, including safeguarding the legal interests of creditors, rights holders and auction winners. Our services also cover objections and disputes arising before, during or after auction and enforcement proceedings." }
+  },
   {
     slug: "litigasi-penyelesaian-sengketa", image: "images/service-litigation.png",
     title: { id: "Litigasi & Penyelesaian Sengketa", en: "Litigation & Dispute Resolution" }, category: { id: "Perdata, Niaga & Arbitrase", en: "Civil, Commercial & Arbitration" }, alt: { id: "Placeholder litigasi dan penyelesaian sengketa", en: "Litigation and dispute resolution placeholder" },
@@ -14,11 +19,6 @@ const serviceCards = [
     slug: "perbankan-pembiayaan-pengalihan-piutang", image: "images/service-banking.png",
     title: { id: "Perbankan, Pembiayaan & Pengalihan Piutang", en: "Banking, Finance & Debt Assignment" }, category: { id: "Cessie & Restrukturisasi Kredit", en: "Debt Assignment & Credit Restructuring" }, alt: { id: "Placeholder perbankan dan pembiayaan", en: "Banking and finance placeholder" },
     description: { id: "Konsultasi dan pendampingan terkait kredit dan pembiayaan, pengalihan piutang (cessie), Hak Tanggungan dan jaminan kebendaan, penyelesaian kredit bermasalah, restrukturisasi kewajiban, penagihan dan pemulihan piutang serta sengketa yang berkaitan dengan aktivitas perbankan dan pembiayaan.", en: "Advice and assistance concerning credit and financing, debt assignment (cessie), mortgages and security interests, non-performing loan resolution, debt restructuring, collection and recovery, and disputes arising from banking and financing activities." }
-  },
-  {
-    slug: "lelang-eksekusi-pengamanan-aset", image: "images/service-execution.png",
-    title: { id: "Lelang, Eksekusi & Pengamanan Aset", en: "Auctions, Enforcement & Asset Security" }, category: { id: "Eksekusi HT & Parate Eksekusi", en: "Mortgage & Direct Enforcement" }, alt: { id: "Placeholder lelang dan eksekusi", en: "Auction and enforcement placeholder" },
-    description: { id: "Pendampingan dalam proses lelang, pelaksanaan eksekusi, pengosongan dan pengamanan aset, termasuk perlindungan kepentingan hukum kreditur, pemegang hak maupun pemenang lelang. Layanan juga mencakup penanganan keberatan dan sengketa yang timbul sebelum, selama maupun setelah proses lelang dan eksekusi.", en: "Assistance with auctions, enforcement, vacancy proceedings and asset protection, including safeguarding the legal interests of creditors, rights holders and auction winners. Our services also cover objections and disputes arising before, during or after auction and enforcement proceedings." }
   },
   {
     slug: "pertanahan-properti-real-estate", image: "images/service-property.webp",
@@ -111,6 +111,9 @@ function renderServiceCards(language = localStorage.getItem("ssg-language") || "
 }
 
 renderServiceCards();
+window.addEventListener("ssg:languagechange", event => {
+  renderServiceCards(event.detail.language);
+});
 document.querySelectorAll("[data-language]").forEach(option => {
   option.addEventListener("click", () => {
     const selectedLanguage = option.dataset.language === "en" ? "en" : "id";

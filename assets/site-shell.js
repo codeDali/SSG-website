@@ -1,4 +1,6 @@
-const pageName = document.body.dataset.page || "index";
+const pageName = document.body.dataset.page === "home"
+  ? "index"
+  : (document.body.dataset.page || "index");
 
 const pages = {
   index: "index.html",
@@ -18,12 +20,21 @@ const labels = {
   contact: "Kontak"
 };
 
+const englishLabels = {
+  index: "Home",
+  about: "About Us",
+  services: "Expertise & Services",
+  team: "Our Team",
+  insights: "Insights & Publications",
+  contact: "Contact"
+};
+
 const header = document.querySelector("[data-site-header]");
 const footer = document.querySelector("[data-site-footer]");
 
 const buildNav = (navPages, currentPage = pageName) =>
   Object.entries(navPages)
-    .map(([key, href]) => `<a href="${href}"${key === currentPage ? ' aria-current="page"' : ""}>${labels[key]}</a>`)
+    .map(([key, href]) => `<a href="${href}"${key === currentPage ? ' aria-current="page"' : ""} data-i18n data-id="${labels[key]}" data-en="${englishLabels[key]}">${labels[key]}</a>`)
     .join("");
 
 const headerNav = buildNav(pages);
@@ -37,12 +48,12 @@ const headerMarkup = `
       <a class="brand" href="index.html">
         <img src="images/ssg-logo.svg" alt="SSG and Partners Law Firm logo">
       </a>
-      <nav class="desktop-nav" id="main-navigation" aria-label="Navigasi utama">
+      <nav class="desktop-nav" id="main-navigation" aria-label="Navigasi utama" data-aria-id="Navigasi utama" data-aria-en="Primary navigation">
         ${headerNav}
       </nav>
       <div class="header-actions">
         <div class="language">
-          <button class="language-toggle" id="language-toggle" aria-expanded="false" aria-controls="language-menu">
+          <button class="language-toggle" id="language-toggle" aria-expanded="false" aria-controls="language-menu" aria-label="Pilih bahasa" data-aria-id="Pilih bahasa" data-aria-en="Select language">
             <span class="language-code" id="language-code">ID</span>
             <span class="language-chevron">⌄</span>
           </button>
@@ -51,8 +62,8 @@ const headerMarkup = `
             <li><button class="language-option" data-language="en" aria-checked="false">English</button></li>
           </ul>
         </div>
-        <a class="button header-cta" href="https://wa.me/6285196513840" target="_blank" rel="noopener">Konsultasi Sekarang</a>
-        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-navigation">
+        <a class="button header-cta" href="https://wa.me/6285196513840" target="_blank" rel="noopener" data-i18n data-id="Konsultasi Sekarang" data-en="Consult Now">Konsultasi Sekarang</a>
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-navigation" aria-label="Buka menu" data-aria-id="Buka menu" data-aria-en="Open menu">
           <span></span>
           <span></span>
         </button>
@@ -66,35 +77,35 @@ const footerMarkup = `
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="images/ssg-logo.svg" alt="SSG and Partners Law Firm logo">
-          <p>Firma hukum dan konsultan hukum berbasis di Sudirman Financial District, Jakarta. Terdaftar dan berakreditasi resmi pada organisasi advokat dan kepailitan Indonesia.</p>
+          <img src="images/ssg-logo-putih.svg" alt="SSG and Partners Law Firm logo">
+          <p data-i18n data-id="Firma hukum dan konsultan hukum berbasis di Sudirman Financial District, Jakarta. Terdaftar dan berakreditasi resmi pada organisasi advokat dan kepailitan Indonesia." data-en="A law firm and legal consultancy based in Jakarta's Sudirman Financial District, duly registered with and accredited by Indonesia's professional organisations for advocates and insolvency practitioners.">Firma hukum dan konsultan hukum berbasis di Sudirman Financial District, Jakarta. Terdaftar dan berakreditasi resmi pada organisasi advokat dan kepailitan Indonesia.</p>
         </div>
         <div>
-          <h2 class="footer-heading">Kantor Pusat</h2>
+          <h2 class="footer-heading" data-i18n data-id="Kantor Pusat" data-en="Head Office">Kantor Pusat</h2>
           <p class="footer-address">Gedung Plaza Sentral, Lantai 14<br>Jl. Jend. Sudirman, RT.5/RW.4<br>Karet Semanggi, Setiabudi, Jakarta Selatan 12940<br>DKI Jakarta, Indonesia</p>
-          <p class="footer-contact"><strong>Jam Operasional:</strong> Senin–Jumat, 09.00–17.00 WIB<br><strong>Email:</strong> ssg.partnerslawfirm@gmail.com<br><strong>WhatsApp:</strong> +62 851-9651-3840</p>
+          <p class="footer-contact"><strong data-i18n data-id="Jam Operasional:" data-en="Office Hours:">Jam Operasional:</strong> <span data-i18n data-id="Senin–Jumat, 09.00–17.00 WIB" data-en="Monday–Friday, 09:00–17:00 WIB">Senin–Jumat, 09.00–17.00 WIB</span><br><strong>Email:</strong> ssg.partnerslawfirm@gmail.com<br><strong>WhatsApp:</strong> +62 851-9651-3840</p>
         </div>
         <div class="footer-nav-column">
-          <h2 class="footer-heading">Navigasi Cepat</h2>
-          <nav class="footer-nav">
+          <h2 class="footer-heading" data-i18n data-id="Navigasi Cepat" data-en="Quick Navigation">Navigasi Cepat</h2>
+          <nav class="footer-nav" aria-label="Navigasi footer" data-aria-id="Navigasi footer" data-aria-en="Footer navigation">
             ${footerNav}
-            <a href="contact.html"${pageName === "contact" ? ' aria-current="page"' : ""}>Hubungi Kami</a>
+            <a href="contact.html"${pageName === "contact" ? ' aria-current="page"' : ""} data-i18n data-id="Hubungi Kami" data-en="Contact Us">Hubungi Kami</a>
           </nav>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© ${new Date().getFullYear()} SSG & Partners Law Firm. Hak cipta dilindungi.</span>
+        <span>© ${new Date().getFullYear()} SSG & Partners Law Firm. <span data-i18n data-id="Hak cipta dilindungi." data-en="All rights reserved.">Hak cipta dilindungi.</span></span>
         <div class="footer-legal">
-          <span>Kebijakan Privasi</span>
-          <span>Disclaimer Hukum</span>
+          <span data-i18n data-id="Kebijakan Privasi" data-en="Privacy Policy">Kebijakan Privasi</span>
+          <span data-i18n data-id="Disclaimer Hukum" data-en="Legal Disclaimer">Disclaimer Hukum</span>
         </div>
         <span>People • Solution • Trust</span>
       </div>
     </div>
   </footer>
-  <a class="floating-whatsapp" href="https://wa.me/6285196513840" target="_blank" rel="noopener">
+  <a class="floating-whatsapp" href="https://wa.me/6285196513840" target="_blank" rel="noopener" aria-label="Konsultasi melalui WhatsApp" data-aria-id="Konsultasi melalui WhatsApp" data-aria-en="Consult via WhatsApp">
     <img src="images/icon-whatsapp.svg" alt="">
-    <span>Konsultasi WhatsApp</span>
+    <span data-i18n data-id="Konsultasi WhatsApp" data-en="WhatsApp Consultation">Konsultasi WhatsApp</span>
   </a>
 `;
 
@@ -240,6 +251,11 @@ const initHeaderControls = () => {
     const selected = language === "en" ? "en" : "id";
     document.documentElement.lang = selected;
 
+    const title = document.body.dataset[selected === "en" ? "titleEn" : "titleId"];
+    const description = document.body.dataset[selected === "en" ? "descriptionEn" : "descriptionId"];
+    if (title) document.title = title;
+    if (description) document.querySelector('meta[name="description"]')?.setAttribute("content", description);
+
     document.querySelectorAll("[data-i18n]").forEach((element) => {
       if (element.dataset[selected] !== undefined) {
         element.textContent = element.dataset[selected];
@@ -248,12 +264,21 @@ const initHeaderControls = () => {
     document.querySelectorAll("[data-alt-id]").forEach((image) => {
       image.alt = selected === "en" ? image.dataset.altEn : image.dataset.altId;
     });
+    document.querySelectorAll("[data-placeholder-id]").forEach((element) => {
+      element.placeholder = selected === "en" ? element.dataset.placeholderEn : element.dataset.placeholderId;
+    });
+    document.querySelectorAll("[data-aria-id]").forEach((element) => {
+      element.setAttribute("aria-label", selected === "en" ? element.dataset.ariaEn : element.dataset.ariaId);
+    });
     languageOptions.forEach((option) => {
       option.setAttribute("aria-checked", String(option.dataset.language === selected));
     });
     if (languageCode) languageCode.textContent = selected.toUpperCase();
     localStorage.setItem("ssg-language", selected);
     closeLanguageMenu();
+    window.dispatchEvent(new CustomEvent("ssg:languagechange", {
+      detail: { language: selected }
+    }));
   };
 
   toggle.addEventListener("click", (event) => {

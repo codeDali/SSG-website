@@ -9,6 +9,7 @@ function renderServiceDetail(language = localStorage.getItem("ssg-language") || 
 
   if (!service) {
     document.title = selectedLanguage === "en" ? "Service Not Found | SSG & Partners" : "Layanan Tidak Ditemukan | SSG & Partners";
+    document.querySelector('meta[name="description"]')?.setAttribute("content", selectedLanguage === "en" ? "The requested legal service could not be found." : "Layanan hukum yang diminta tidak ditemukan.");
     detailRoot.innerHTML = `
       <div class="service-detail-error">
         <h1>${selectedLanguage === "en" ? "Service not found" : "Layanan tidak ditemukan"}</h1>
@@ -19,6 +20,7 @@ function renderServiceDetail(language = localStorage.getItem("ssg-language") || 
   }
 
   document.title = `${service.title[selectedLanguage]} | SSG & Partners`;
+  document.querySelector('meta[name="description"]')?.setAttribute("content", service.description[selectedLanguage]);
   detailRoot.innerHTML = `
     <a class="service-detail-back" href="services.html"><span aria-hidden="true">←</span> ${selectedLanguage === "en" ? "All Services" : "Semua Layanan"}</a>
     <article class="service-detail-layout">

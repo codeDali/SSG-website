@@ -103,6 +103,8 @@
 
       .partner-card {
         position: relative;
+        display: flex;
+        flex-direction: column;
         padding: 20px;
         background: #fff;
         border: 1px solid var(--line);
@@ -114,6 +116,7 @@
         display: grid;
         grid-template-columns: 135px 1fr;
         gap: 16px;
+        min-height: 220px;
       }
 
       .partner-photo {
@@ -157,6 +160,7 @@
         color: #947530;
         font-size: 0.67rem;
         font-weight: 700;
+        line-height: 1.25;
       }
 
       .partner-card p {
@@ -167,14 +171,19 @@
       }
 
       .credentials {
+        min-height: 76px;
         margin-top: 15px;
         padding: 11px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background: #f2eff5;
         color: #5b5351;
         font-size: 0.68rem;
       }
 
       .focus {
+        min-height: 84px;
         margin-top: 15px;
       }
 
@@ -200,12 +209,18 @@
       .card-link {
         display: flex;
         justify-content: space-between;
-        margin-top: 16px;
+        gap: 20px;
+        margin-top: auto;
         padding-top: 12px;
         border-top: 1px solid var(--line);
         color: #7a151b;
         font-size: 0.66rem;
         font-weight: 700;
+      }
+
+      .card-link span:last-child {
+        flex: 0 0 auto;
+        text-align: right;
       }
 
       .people-section {
@@ -285,10 +300,12 @@
       }
 
       .person-role {
+        display: inline-block;
         color: #987a31;
         font-size: 0.62rem;
         font-weight: 700;
         letter-spacing: 0.05em;
+        line-height: 1.25;
         text-transform: uppercase;
       }
 
@@ -436,6 +453,12 @@
           height: 145px;
         }
 
+        .partner-top,
+        .credentials,
+        .focus {
+          min-height: 0;
+        }
+
         .people-grid .person {
           flex-basis: 86%;
         }
@@ -455,14 +478,20 @@
     </style>
   </head>
 
-  <body data-page="team">
+  <body
+    data-page="team"
+    data-title-id="Tim Kami | SSG &amp; Partners"
+    data-title-en="Our Team | SSG &amp; Partners"
+    data-description-id="Tim advokat, konsultan, dan tenaga ahli SSG &amp; Partners Law Firm."
+    data-description-en="Meet the advocates, consultants, and specialist advisers of SSG &amp; Partners Law Firm."
+  >
     <div data-site-header></div>
 
     <main>
       <section class="team-hero">
         <div class="container">
-          <h1>Tim Pengacara &amp; Konsultan<br>Hukum Berdedikasi</h1>
-          <p>
+          <h1><span data-i18n data-id="Tim Pengacara &amp; Konsultan" data-en="A Team of Dedicated Advocates &amp;">Tim Pengacara &amp; Konsultan</span><br><span data-i18n data-id="Hukum Berdedikasi" data-en="Legal Consultants">Hukum Berdedikasi</span></h1>
+          <p data-i18n data-id="Menyatukan keahlian akademis mendalam, presisi litigasi tingkat tinggi, serta lisensi spesialisasi resmi untuk mengawal sengketa paling kompleks dan transaksi strategis di Indonesia." data-en="Bringing together extensive academic expertise, rigorous litigation capabilities, and recognised specialist credentials to advise on complex disputes and strategic transactions in Indonesia.">
             Menyatukan keahlian akademis mendalam, presisi litigasi tingkat tinggi,
             serta lisensi spesialisasi resmi untuk mengawal sengketa paling kompleks
             dan transaksi strategis di Indonesia.
@@ -474,10 +503,10 @@
         <div class="container">
           <div class="leadership-head">
             <div>
-              <p class="eyebrow">Pimpinan Kantor Hukum</p>
+              <p class="eyebrow" data-i18n data-id="Pimpinan Kantor Hukum" data-en="Firm Leadership">Pimpinan Kantor Hukum</p>
               <h2 class="title">Managing Partners</h2>
             </div>
-            <p>
+            <p data-i18n data-id="Memimpin strategi komprehensif pada peradilan niaga, forum arbitrase, mitigasi perbankan, dan penegakan hukum perdata-pidana skala multinasional." data-en="Leading comprehensive strategies in commercial court proceedings, arbitration, banking risk mitigation, and multinational civil and criminal enforcement matters.">
               Memimpin strategi komprehensif pada peradilan niaga, forum arbitrase,
               mitigasi perbankan, dan penegakan hukum perdata-pidana skala multinasional.
             </p>
@@ -491,10 +520,6 @@
                   <img src="images/sopian.webp" alt="Placeholder potret Dr. Sopian Sitepu">
                 </div>
                 <div>
-                  <div class="partner-tags">
-                    <span class="tag">PERADI No. Induk Advokat Resmi</span>
-                    <span class="tag">20+ Th Pengalaman</span>
-                  </div>
                   <h2>DR. SOPIAN SITEPU, S.H., M.H., M.Kn.</h2>
                   <div class="role">Managing Partner</div>
                   <p style="text-align: justify;">
@@ -533,9 +558,9 @@
                     <span class="tag">AKPI Registered Curator</span>
                     <span class="tag">Akreditasi Mahkamah Agung</span>
                   </div>
-                  <h2>RIDHO I. GINTING, S.H., C.Med., CCP., CCD., C.PLA.</h2>
+                  <h2>RIDHO I. GINTING, S.H., C.Med., CCD., CPLA.</h2>
                   <div class="role">Managing Partner</div>
-                  <p>
+                  <p style="text-align: justify;">
                     Pakar bersertifikasi multi-disiplin dalam resolusi sengketa non-litigasi,
                     mediasi perbankan, penegakan barang, dan kurator kepailitan resmi.
                   </p>
@@ -568,8 +593,8 @@
           <div class="section-head">
             <h2>Senior Associates &amp; Associates</h2>
             <div class="carousel-controls">
-              <button class="carousel-button" type="button" data-carousel="associates" data-direction="-1" aria-label="Lihat associate sebelumnya">‹</button>
-              <button class="carousel-button" type="button" data-carousel="associates" data-direction="1" aria-label="Lihat associate berikutnya">›</button>
+              <button class="carousel-button" type="button" data-carousel="associates" data-direction="-1" aria-label="Lihat associate sebelumnya" data-aria-id="Lihat associate sebelumnya" data-aria-en="View previous associate">‹</button>
+              <button class="carousel-button" type="button" data-carousel="associates" data-direction="1" aria-label="Lihat associate berikutnya" data-aria-id="Lihat associate berikutnya" data-aria-en="View next associate">›</button>
             </div>
           </div>
 
@@ -630,8 +655,8 @@
                 <span class="person-role">PERADI Licensed</span>
                 <h3>Prandika Bangun, S.H.</h3>
                 <p style="text-align: justify;">
-                  Advokat dengan segudang pengalaman, sejak masih berkuliah telah aktif dan bergabung pada Kantor Hukum Sopian Sitepu & Partners,
-                  sehingga sangat memahami teori-teori hukum yang didapat pada bangku perkuliahan untuk dikembangkan dan diaplikasikan dalam praktik.
+                  Advokat dengan segudang pengalaman,
+                  sangat memahami teori-teori hukum yang didapat pada bangku perkuliahan untuk dikembangkan dan diaplikasikan dalam praktik.
                 </p>
               </div>
             </article>
@@ -672,8 +697,11 @@
       <section class="people-section">
         <div class="container">
           <div class="section-head">
-            <h2>Staff Ahli</h2>
-            <div class="carousel-controls"></div>
+            <h2 data-i18n data-id="Staf Ahli" data-en="Specialist Advisers">Staf Ahli</h2>
+             <div class="carousel-controls">
+              <button class="carousel-button" type="button" data-carousel="staff" data-direction="-1" aria-label="Lihat tenaga ahli sebelumnya" data-aria-id="Lihat tenaga ahli sebelumnya" data-aria-en="View previous specialist adviser">‹</button>
+              <button class="carousel-button" type="button" data-carousel="staff" data-direction="1" aria-label="Lihat tenaga ahli berikutnya" data-aria-id="Lihat tenaga ahli berikutnya" data-aria-en="View next specialist adviser">›</button>
+            </div>
           </div>
 
           <div class="people-grid" id="staff">
@@ -738,6 +766,20 @@
                 </p>
               </div>
             </article>
+
+             <article class="person">
+              <div class="person-photo">
+                <!-- Replace with final staff portrait. -->
+                <img src="images/ade-arif.png" alt="Placeholder potret Dr. Ade Arif">
+              </div>
+              <div class="person-copy">
+                <span class="person-role">Tenaga ahli bidang Hukum Pertanahan dan Hukum Administrasi Negara</span>
+                <h3>Prof. Dr. Fransiscus Xaverius Sumarja, S.H., M.Hum.</h3>
+                <p>
+                  Tenaga ahli bidang Hukum Pertanahan dan Hukum Administrasi Negara
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -745,7 +787,7 @@
       <section class="people-section">
         <div class="container">
           <div class="section-head">
-            <h2>Supporting</h2>
+            <h2 data-i18n data-id="Tim Pendukung" data-en="Supporting Team">Tim Pendukung</h2>
             <div class="carousel-controls"></div>
           </div>
 
@@ -772,9 +814,9 @@
         <div class="container">
           <div class="cta-card">
             <div>
-              <p class="eyebrow" style="color: #edd59e;">Konsultasi Strategis Awal</p>
-              <h2>Diskusikan Masalah Hukum Anda Langsung dengan Partner Kami</h2>
-              <p>
+              <p class="eyebrow" style="color: #edd59e;" data-i18n data-id="Konsultasi Strategis Awal" data-en="Initial Strategic Consultation">Konsultasi Strategis Awal</p>
+              <h2 data-i18n data-id="Diskusikan Masalah Hukum Anda Langsung dengan Partner Kami" data-en="Discuss Your Legal Matter Directly with Our Partners">Diskusikan Masalah Hukum Anda Langsung dengan Partner Kami</h2>
+              <p data-i18n data-id="Dapatkan validasi yuridis awal, pemetaan risiko, dan formulasi taktis hukum bersama Dr. Sopian Sitepu &amp; Ridho I. Ginting." data-en="Receive an initial legal assessment, risk mapping, and a tailored legal strategy with Dr Sopian Sitepu and Ridho I. Ginting.">
                 Dapatkan validasi yuridis awal, pemetaan risiko, dan formulasi taktis hukum
                 bersama Dr. Sopian Sitepu &amp; Ridho I. Ginting.
               </p>
@@ -782,10 +824,10 @@
 
             <div class="cta-actions">
               <a class="button" href="https://wa.me/6285196513840" target="_blank" rel="noopener">
-                Konsultasi Cepat via WhatsApp
+                <span data-i18n data-id="Konsultasi Cepat melalui WhatsApp" data-en="Prompt Consultation via WhatsApp">Konsultasi Cepat melalui WhatsApp</span>
               </a>
               <a class="button secondary" href="mailto:ssg.partnerslawfirm@gmail.com">
-                Buat Janji Temu di Kantor
+                <span data-i18n data-id="Buat Janji Temu di Kantor" data-en="Arrange an Office Meeting">Buat Janji Temu di Kantor</span>
               </a>
             </div>
           </div>
@@ -795,8 +837,8 @@
 
     <div data-site-footer></div>
 
-    <script src="assets/site-shell.js"></script>
-    <script type="module" src="assets/team-cards.js"></script>
+    <script src="assets/site-shell.js?v=20260922-en"></script>
+    <script type="module" src="assets/team-cards.js?v=20260922-en"></script>
     <script>
       document.querySelectorAll('.carousel-button').forEach((button) => {
         button.addEventListener('click', () => {
