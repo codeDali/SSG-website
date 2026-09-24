@@ -1,0 +1,93 @@
+.article-carousel {
+  margin: 36px auto;
+  width: min(640px, 100%);
+  outline: none;
+}
+
+.carousel-stage {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+}
+
+.article-slide {
+  grid-area: 1 / 1;
+  margin: 0;
+}
+
+.article-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.article-slide figcaption {
+  padding: 12px 15px;
+  color: var(--stone);
+  font-size: .75rem;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.carousel-arrow {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  border: 1px solid var(--burgundy);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--burgundy);
+  font: 700 1rem/1 var(--sans);
+  cursor: pointer;
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:focus-visible {
+  background: var(--burgundy);
+  color: #fff;
+}
+
+.carousel-dots {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 7px;
+}
+
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #d5cbca;
+  cursor: pointer;
+}
+
+.carousel-dots button[aria-current="true"] {
+  width: 22px;
+  border-radius: 999px;
+  background: var(--burgundy);
+}
+
+.carousel-count {
+  min-width: 42px;
+  margin: 0;
+  color: var(--stone);
+  font-size: .72rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .carousel-controls { gap: 8px; }
+  .carousel-arrow { width: 38px; height: 38px; }
+  .carousel-dots { gap: 5px; }
+}

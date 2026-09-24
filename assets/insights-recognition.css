@@ -1,0 +1,37 @@
+.filters-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.filters-bar .filters {
+  margin-bottom: 0;
+}
+
+.recognition-overview-link {
+  flex: 0 0 auto;
+  padding: 8px 0;
+  color: var(--burgundy);
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.recognition-overview-link:hover,
+.recognition-overview-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .filters-bar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .recognition-overview-link {
+    padding-top: 0;
+  }
+}

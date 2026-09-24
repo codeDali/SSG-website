@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/admin.css">
+  <link rel="stylesheet" href="assets/admin-content-types.css?v=20260923-content-types">
   <style>.link-button{display:block;margin:16px 0 0;padding:0;border:0;background:transparent;color:#74131a;font:700 .76rem "Plus Jakarta Sans",Arial,sans-serif;text-decoration:underline;cursor:pointer}.password-panel{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0 0 28px;padding:20px 24px;border:1px solid #e6dfdc;border-left:4px solid #74131a;background:#fff}.password-panel h2{margin:0;font:1.35rem "Times New Roman",serif;color:#74131a}.password-panel p{max-width:500px;margin:4px 0 0;color:#776f6c;font-size:.75rem}.password-form{display:grid;grid-template-columns:190px 190px auto;gap:8px;align-items:center}.password-form input{min-width:0;padding:10px;border:1px solid #cbc3c1;border-radius:3px;font:inherit;font-size:.75rem}.password-form span{grid-column:1/-1;color:#776f6c;font-size:.7rem}@media(max-width:880px){.password-panel{align-items:flex-start;flex-direction:column}.password-form{width:100%;grid-template-columns:1fr 1fr auto}}@media(max-width:560px){.password-form{grid-template-columns:1fr}.password-form span{grid-column:auto}}</style>
   <title>Admin Konten | SSG & Partners</title>
 </head>
@@ -46,10 +47,20 @@
             <input type="hidden" name="post_id">
             <div class="form-grid">
               <div class="field"><label for="kind">Jenis</label><select id="kind" name="kind"><option value="wawasan">Wawasan</option><option value="publikasi">Publikasi</option></select></div>
-              <div class="field"><label for="format">Format</label><select id="format" name="format"><option value="article">Artikel web</option><option value="pdf">PDF unduhan</option></select></div>
+              <div class="field"><label for="content-type">Format konten</label><select id="content-type" name="content_type"><option value="article">Artikel web</option><option value="pdf">PDF unduhan</option><option value="external">Sumber eksternal</option><option value="carousel">Carousel edukasi</option></select></div>
               <div class="field full"><label for="title">Judul</label><input id="title" name="title" required maxlength="180"></div>
               <div class="field full"><label for="excerpt">Ringkasan</label><textarea id="excerpt" name="excerpt" required maxlength="500"></textarea></div>
               <div class="field full" data-body-field><label for="body">Isi artikel</label><textarea id="body" name="body" placeholder="Tulis isi artikel di sini. Untuk sekarang, formatnya teks biasa."></textarea></div>
+              <div class="field full" data-external-field hidden>
+                <div class="form-grid nested-grid">
+                  <div class="field"><label for="source-name">Nama sumber</label><input id="source-name" name="source_name" placeholder="Contoh: Hukumonline"></div>
+                  <div class="field"><label for="external-url">URL sumber</label><input id="external-url" name="external_url" type="url" inputmode="url" placeholder="https://..."></div>
+                  <div class="field"><label for="source-date">Tanggal sumber</label><input id="source-date" name="source_date" type="date"></div>
+                  <div class="field"><label for="award-year">Tahun penghargaan</label><input id="award-year" name="award_year" type="number" min="1900" max="2100" placeholder="2025"></div>
+                  <div class="field full"><label for="rank-label">Keterangan peringkat</label><input id="rank-label" name="rank_label" placeholder="Contoh: Peringkat 57"></div>
+                </div>
+              </div>
+              <div class="field full" data-carousel-field hidden><label for="carousel-images">Gambar slide</label><input id="carousel-images" name="carousel_images" type="file" accept="image/png,image/jpeg,image/webp" multiple><p class="file-help">Urutan mengikuti nama file. Maksimal 12 slide; setiap gambar otomatis dikompres ke WebP tanpa dipotong.</p><label for="carousel-alt-text">Teks alternatif slide</label><textarea id="carousel-alt-text" name="carousel_alt_text" placeholder="Satu baris untuk setiap slide. Jika kosong, judul dan nomor slide akan digunakan."></textarea><p class="file-help" data-existing-slides></p></div>
               <div class="field"><label for="category">Kategori</label><input id="category" name="category" required placeholder="Contoh: Hukum Perbankan"></div>
               <div class="field"><label for="reading-minutes">Estimasi baca (menit)</label><input id="reading-minutes" name="reading_minutes" type="number" min="1" value="5" required></div>
               <div class="field"><label for="author-name">Nama penulis</label><input id="author-name" name="author_name" required></div>
@@ -69,6 +80,6 @@
       </div>
     </section>
   </main>
-  <script type="module" src="assets/admin.js"></script>
+  <script type="module" src="assets/admin.js?v=20260923-content-types"></script>
 </body>
 </html>

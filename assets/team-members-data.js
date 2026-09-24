@@ -272,9 +272,9 @@ export const teamMembers = {
   },
 
   "aurora-pebry-dhea-surbakti": {
-    name: "Aurora Pebry Dhea Surbakti",
+    name: "Aurora Pebry Dhea",
     role: "Supporting Team",
-    image: "images/team-staff-placeholder.svg",
+    image: "images/aurora-pebry.png",
     placeholder: true
   }
 };
@@ -515,7 +515,9 @@ export const teamMemberEnglish = {
   },
 
   "aurora-pebry-dhea-surbakti": {
-    role: "Supporting Team"
+    name: "Aurora Pebry Dhea",
+    role: "Supporting Team",
+    image: "images/aurora-pebry.png"
   }
 };
 

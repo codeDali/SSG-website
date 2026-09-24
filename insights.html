@@ -13,6 +13,7 @@
     >
     <link rel="stylesheet" href="assets/site-shell.css">
     <link rel="stylesheet" href="assets/insights.css">
+    <link rel="stylesheet" href="assets/insights-recognition.css?v=20260924">
 
     <style>
       .featured-card {
@@ -87,10 +88,15 @@
 
       <section class="insights-content">
         <div class="container">
-          <div class="filters" aria-label="Filter konten" data-aria-id="Filter konten" data-aria-en="Content filters">
-            <button class="filter-button" type="button" data-kind="all" aria-pressed="true" data-i18n data-id="Semua" data-en="All">Semua</button>
-            <button class="filter-button" type="button" data-kind="wawasan" aria-pressed="false" data-i18n data-id="Wawasan" data-en="Insights">Wawasan</button>
-            <button class="filter-button" type="button" data-kind="publikasi" aria-pressed="false" data-i18n data-id="Publikasi" data-en="Publications">Publikasi</button>
+          <div class="filters-bar">
+            <div class="filters" aria-label="Filter konten" data-aria-id="Filter konten" data-aria-en="Content filters">
+              <button class="filter-button" type="button" data-filter="all" aria-pressed="true" data-i18n data-id="Semua" data-en="All">Semua</button>
+              <button class="filter-button" type="button" data-filter="wawasan" aria-pressed="false" data-i18n data-id="Wawasan" data-en="Insights">Wawasan</button>
+              <button class="filter-button" type="button" data-filter="publikasi" aria-pressed="false" data-i18n data-id="Publikasi" data-en="Publications">Publikasi</button>
+              <button class="filter-button" type="button" data-filter="carousel" aria-pressed="false" data-i18n data-id="Edukasi" data-en="Education">Edukasi</button>
+              <button class="filter-button" type="button" data-filter="external" aria-pressed="false" data-i18n data-id="Penghargaan &amp; Liputan" data-en="Recognition &amp; Media" hidden>Penghargaan &amp; Liputan</button>
+            </div>
+            <a class="recognition-overview-link" href="recognition.html" data-i18n data-id="Lihat rekam jejak terverifikasi →" data-en="View verified track record →">Lihat rekam jejak terverifikasi →</a>
           </div>
 
           <div data-content-area>
@@ -106,6 +112,6 @@
     <div data-site-footer></div>
 
     <script src="assets/site-shell.js?v=20260922-en"></script>
-    <script type="module" src="assets/insights.js?v=20260922-en2"></script>
+    <script type="module" src="assets/insights.js?v=20260924-recognition-dedup"></script>
   </body>
 </html>
